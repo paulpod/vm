@@ -1,0 +1,144 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_vmretainprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+  <!-- <h1 class="form-title heading-xlarge">
+    Taxing a vehicle
+  </h1> -->
+
+
+  <div>
+  <a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+  </div>
+
+  <br clear="all">
+
+
+
+
+
+  <form action="evl-3-flow" method="get" class="form">
+  <input type="hidden" name="nextlink" value="evl-renewal-type">
+  <input type="hidden" name="nextbacklink" value="evl-vehicle-details">
+  <input type="hidden" name="regmark" value="{{defaultreg}}">
+  <input type="hidden" name="kind" value="{{kind}}">
+
+
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+    <h2 class="heading-large" style="padding:0;margin:0 0 1em 0">This registration number cannot be retained online</h2>
+
+    <p>Transaction ID D115 0615 101400</p>
+
+    <p>You are unable to continue with this application online.</p>
+
+    <p>You must complete a V317 form and send it to:</p>
+
+    <p>DVLA Personalised Registrations<br>
+    Swansea<br>
+    SA99 1DS</p>
+
+    <p>All documents must be originals, not photocopies or faxed copies.</p>
+
+     <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding:1em 0">
+    <input type="submit" class="button" value="Try again">
+
+    <p style="padding:1em 0"><a href="start">Exit</a>
+
+  </div>
+
+</form>
+
+    <p>To contact us:</p>
+
+    <img src="/public/images/bw-webchat-long2.png" width="76" height="61" align="middle" style="padding-right:1em"> <a href="#">Chat online to an agent</a>
+
+    <p>Telephone <br>
+    0300 123 1350<br>
+    please enter code 662 when prompted</p>
+
+    <p>Monday to Friday: 0800 – 1900<br>
+    Saturday: 0800 – 1400<br>
+    Sunday: Closed</p>
+
+    <p>Textphone<br>
+    1800103001231379</p>
+
+    </div>
+
+
+
+    <div class="column-third">
+
+      <div id="sidebar" style="background-color:#d5e8f3;padding:0.2em 1em">
+
+      <h3 class="heading-medium">Vehicle details</h3>
+
+      <p><span class="reg-mark">CU57 ABC</span></p>
+
+      
+      <!--<p>To contact us:</p>
+
+      <p>Telephone <br>
+      0300 123 1350<br>
+      please enter code 662 when prompted</p>
+
+      <p>Monday to Friday: 0800 – 1900<br>
+      Saturday: 0800 – 1400<br>
+      Sunday: Closed</p>
+
+      <p>Textphone<br>
+      1800103001231379</p>-->
+
+      </div><!-- end sidebar -->
+
+    </div>
+  </div>
+
+
+ 
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

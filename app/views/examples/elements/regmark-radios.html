@@ -1,0 +1,134 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <link rel="stylesheet" type="text/css" href="/public/stylesheets/jquery-custom-form-v2.css" /> 
+  
+  <script type="text/javascript" src="/public/javascripts/jquery-1.9.0-min.js"></script>
+  <script type="text/javascript" src="/public/javascripts//jquery-custom-form-v2.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+    
+      $(".cus_checkbox").cuscheckbox();
+      $(".cus_radio").cusradio();
+      $(".cus_select").cusselect();
+    
+    }); 
+  </script>
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" bref="css/styles-ie.css" />
+  <![endif]--> 
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_evlprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+  <!-- <h1 class="form-title heading-xlarge">
+    Taxing a vehicle
+  </h1> -->
+
+
+  <div>
+  <a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+  </div>
+
+  <br clear="all">
+
+
+
+
+
+
+
+
+  <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Regmarks as radio buttons</h2>
+
+
+<div class="wrap">
+<form>
+  <div class="inner">
+    <ul>
+
+    
+      <li class="cus_box_hidden">
+        <input class="cus_radio" type="radio" name="name3" value="1" />
+        <label><i class="reg-mark" style="font-size:120%">CU57 ABC</i></label>
+      </li>
+
+      <li class="cus_box_hidden">
+        <input class="cus_radio" type="radio" name="name3" value="2" />
+        <label><i class="reg-mark" style="font-size:120%">CU57 CDE</i></label>
+      </li>
+
+      <li class="cus_box_hidden">
+        <input class="cus_radio" type="radio" name="name3" value="3" />
+        <label><i class="reg-mark" style="font-size:120%">CU57 DEF</i></label>
+      </li>
+     
+    </ul> 
+  </div>
+</form>
+</div>
+
+    <label for="radio-inline-1" class="block-label">
+    <input id="radio-inline-1" type="radio"  name="regpick" value="1">
+    <i class="reg-mark" style="font-size:120%">CU57 ABC</i>
+    </label>
+
+   
+
+
+    <label for="radio-inline-2" class="block-label">
+    <input id="radio-inline-2" type="radio"  name="regpick" value="2">
+    <i class="reg-mark" style="font-size:120%">CU57 ABC</i>
+</label>
+  
+
+
+    <label for="radio-inline-3" class="block-label">
+    <input id="radio-inline-3" type="radio"  name="regpick" value="3">
+    <i class="reg-mark" style="font-size:120%">CU57 ABC</i>
+    </label>
+
+
+
+
+
+
+    
+
+
+  <br clear="all">
+
+  
+
+
+
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

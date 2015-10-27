@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+    <title>jQuery-custom-form-v2</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+	<link rel="stylesheet" type="text/css" href="/public/stylesheets/jquery-custom-form-v2.css" /> 
+	
+	<script type="text/javascript" src="/public/javascripts/jquery-1.9.0-min.js"></script>
+	<script type="text/javascript" src="/public/javascripts//jquery-custom-form-v2.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		
+			$(".cus_checkbox").cuscheckbox();
+			$(".cus_radio").cusradio();
+			$(".cus_select").cusselect();
+		
+		});	
+	</script>
+    <!--[if lt IE 9]>
+		<link rel="stylesheet" type="text/css" bref="css/styles-ie.css" />
+	<![endif]--> 
+</head>
+<body>
+
+
+<div class="wrap" style="font-family: Arial, Helvetica;">
+	<form>
+	<div class="inner">
+	
+		<h2>CUSTOM IMPUTS and SELECT v2</h2>
+		
+		<strong class="title">CHECKBOX group 1 with disabled actions</strong>
+		<ul>
+			<li class="cus_box_hidden">
+				<input class="cus_checkbox" id="inp_0001" type="checkbox" name="nameX" value="1" />
+				<span>Label Text here with input hidden</span>
+			</li>
+			<li class="cus_box_hidden">
+				<input class="cus_checkbox" id="inp_0002" type="checkbox" name="nameX" value="2" />
+				<label for="inp_02">Label Text here with input hidden</label>
+			</li>
+			<li>
+				<input class="uncheked_disabled cus_checkbox" id="inp_0003" type="checkbox" name="nameX" value="3" />
+				<label>Label for uncheked and disabled</label>
+			</li>
+			<li>
+				<input class="cheked_disabled cus_checkbox" id="inp_0004" type="checkbox" name="nameX" value="4" />
+				<label>Label for cheked and disabled</label>
+			</li>
+			<li class="cus_active">
+				<input class="cus_checkbox" id="inp_0004" type="checkbox" name="nameX" value="5" />
+				<label>Label for defaul active input</label>
+			</li>
+			
+		</ul>
+		
+		<strong class="title">CHECKBOX group 2</strong>
+		<ul>
+			<li class="cus_box_hidden">
+				<input class="cus_checkbox" id="inp_001" type="checkbox" name="nameY" value="1" />
+				<span>Label Text here with input hidden</span>
+			</li>
+			<li class="cus_box_hidden">
+				<input class="cus_checkbox" id="inp_002" type="checkbox" name="nameY" value="2" />
+				<label for="inp_02">Label Text here with input hidden</label>
+			</li>
+			<li class="cus_box_hidden">
+				<input class="cus_checkbox" id="inp_003" type="checkbox" name="nameY" value="3" />
+				<label>Label Text here with input hidden</label>
+			</li>
+			<li>
+				<input class="cus_checkbox" id="inp_004" type="checkbox" name="nameY" value="3" />
+				<label>Label Text here with input shown</label>
+			</li>
+			
+		</ul>
+		
+		<strong class="title">RADIO buttons group 1 "disabled"</strong>
+		<ul>
+			<li class="cus_box_hidden">
+				<input class="cus_radio" type="radio" name="name1" value="2" />
+				<label>Label Text here with input hidden</label>
+			</li>
+			<li class="cus_box_hidden">
+				<input class="cus_radio" type="radio" name="name1" value="3" />
+				<label>Label Text here with input hidden</label>
+			</li>
+			<li>
+				<input class="cheked_radio_disabled cus_radio" type="radio" name="name1" value="4" />
+				<label>Label for cheked radio disabled</label>
+			</li>
+			<li>
+				<input class="uncheked_radio_disabled cus_radio" type="radio" name="name1" value="5" />
+				<label>Label for uncheked radio disabled</label>
+			</li>
+			<li>
+				<input class="cus_radio" type="radio" name="name1" value="6" />
+				<label>Label Text here with input shown</label>
+			</li>
+		</ul>
+		
+		<strong class="title">RADIO buttons group 2 "with one input(radio) checked"</strong>
+		<ul>
+			<li class="cus_box_hidden">
+				<input class="cus_radio" type="radio" name="[325 XX name2 name3]#$%" value="1" />
+				<label>Label Text here with input hidden</label>
+			</li>
+			<li class="cus_box_hidden">
+				<input class="cus_radio" type="radio" name="[325 XX name2 name3]#$%" value="2" />
+				<label>Label Text here with input hidden</label>
+			</li>
+			<li class="cus_box_hidden">
+				<input class="cus_radio" type="radio" name="[325 XX name2 name3]#$%" value="3" />
+				<label>Label Text here with input hidden</label>
+			</li>
+			<li class="cus_active">
+				<input class="cus_radio" type="radio" name="[325 XX name2 name3]#$%" value="4" />
+				<label>Label Text here with input shown</label>
+			</li>
+		</ul>
+		
+		<strong class="title">RADIO buttons group 3</strong>
+		<ul>
+			<li class="cus_box_hidden">
+				<input class="cus_radio" type="radio" name="name3" value="1" />
+				<label>Label Text here with input hidden</label>
+			</li>
+			<li class="cus_box_hidden">
+				<input class="cus_radio" type="radio" name="name3" value="2" />
+				<label>Label Text here with input hidden</label>
+			</li>
+			<li class="cus_box_hidden">
+				<input class="cus_radio" type="radio" name="name3" value="3" />
+				<label>Label Text here with input hidden</label>
+			</li>
+			<li>
+				<input class="cus_radio" type="radio" name="name3" value="4" />
+				<label>Label Text here with input shown</label>
+			</li>
+		</ul>	
+		<br>	
+		<br>
+		
+		
+		<strong class="title">Table element CHECKBOX</strong>
+		<table>
+			<tr>
+				<td class="cus_box_hidden">
+					<input class="cus_checkbox" id="inp_ad" type="checkbox" name="name" value="1" />
+					<span class="label">Label Text here with input hidden</span>
+				</td>
+				<td class="cus_box_hidden">
+					<input class="cus_checkbox" id="inp_ae" type="checkbox" name="name" value="1" />
+					<span class="label">Label Text here with input hidden</span>
+				</td>
+				<td>
+					<input class="cus_checkbox" id="inp_af" type="checkbox" name="name" value="1" />
+					<span class="label">Label Text here with input shown</span>
+				</td>
+			</tr>
+		</table>
+		<br />
+		<br />
+		
+		<strong class="title">Table 2 element CUSTOM RADIO</strong>
+		<table>
+			<tr>
+				<td class="cus_box_hidden">
+					<input class="cus_radio" id="inp_a1" type="radio" name="name" value="1" />
+					<span class="label">Label Text here with input hidden</span>
+				</td>
+				<td class="cus_box_hidden">
+					<input class="cus_radio" id="inp_a2" type="radio" name="name" value="1" />
+					<span class="label">Label Text here with input hidden</span>
+				</td>
+				<td>
+					<input class="cus_radio" id="inp_a3" type="radio" name="name" value="1" />
+					<span class="label">Label Text here with input shown</span>
+				</td>
+			</tr>
+		</table>
+		<br />
+		<br />
+		
+		<strong class="title">Table 3(format) element CUSTOM RADIO</strong>
+		<table>
+			<tr>
+				<td class="cus_box_hidden">
+					<input class="cus_radio" id="inp_b1" type="radio" name="name005" value="1" />
+					<label class="label">Label Text here with input hidden</label>
+				</td>
+			</tr>
+			<tr>
+				<td class="cus_box_hidden">
+					<input class="cus_radio" id="inp_b2" type="radio" name="name005" value="2" />
+					<label class="label">Label Text here with input hidden</label>
+				</td>
+			</tr>
+			<tr>
+				<td class="cus_box_hidden">
+					<input class="cus_radio" id="inp_b3" type="radio" name="name005" value="3" />
+					<label class="label">Label Text here with input hidden</label>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input class="cus_radio" id="inp_b4" type="radio" name="name005" value="4" />
+					<label class="label">Label Text here with input shown</label>
+				</td>
+			</tr>
+		</table>
+		<br />
+		<br />
+		
+		
+		<strong class="title">RADIO buttons in div</strong>
+			<div>
+				<div class="cus_box_hidden">
+					<input class="cus_radio" id="inp_05" type="radio" name="namez" value="1" />
+					<span class="label">Label Text here with input hidden</span>
+				</div>
+				<div class="cus_box_hidden">
+					<input class="cus_radio" id="inp_06" type="radio" name="namez" value="1" />
+					<span class="label">Label Text here with input hidden</span>
+				</div>
+				<div>
+					<input class="cus_radio" id="inp_07" type="radio" name="namez" value="1" />
+					<span class="label">Label Text here with input shown</span>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		
+		
+		<strong class="title">Div element CHECKBOX group</strong>
+		<div>
+			<div class="cus_box_hidden">
+				<input class="cus_checkbox" id="inp_aa" type="checkbox" name="name" value="1" />
+				<label class="label">Label Text here with input hidden</label>
+			</div>
+			<div class="cus_box_hidden">
+				<input class="cus_checkbox" id="inp_ab" type="checkbox" name="name" value="1" />
+				<label class="label">Label Text here with input hidden</label>
+			</div>
+			<div>
+				<input class="cus_checkbox" id="inp_ac" type="checkbox" name="name" value="1" />
+				<label class="label">Label Text here with input shown</label>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br />
+		<strong class="title">CUSTOME SELECT ELEMENTS</strong>
+		<div>
+			<select name="menu-48" aria-invalid="false" class="cus_select">
+				<option value="checkbox 1">checkbox 1</option>
+				<option value="checkbox 2">checkbox 2</option>
+				<option value="checkbox 3">checkbox 3</option>
+				<option value="checkbox 4">checkbox 4</option>
+			</select>
+		</div>
+		
+		<div>
+			<label>This a select with label option</label>
+			<select class="cus_select">
+				<option value="other checkbox 1">other checkbox 1</option>
+				<option value="other checkbox 2">other checkbox 2</option>
+				<option value="other checkbox 3">other checkbox 3</option>
+				<option value="other checkbox 4">other checkbox 4</option>
+			</select>
+		</div>
+		
+		<ul>
+			<li>
+				<div>block test</div>
+				<div>block 2 test</div>
+				<span>This a select with span element option</span>
+				<select class="cus_select">
+					<option value="other one checkbox 1">other one checkbox 1</option>
+					<option value="other one checkbox 2">other one checkbox 2</option>
+					<option value="other one checkbox 3">other one checkbox 3</option>
+					<option value="other one checkbox 4">other one checkbox 4</option>
+				</select>
+			</li>
+			<li>
+				<select class="cus_select">
+					<option value="II other one checkbox 1">II other one checkbox 1</option>
+					<option value="II other one checkbox 2">II other one checkbox 2</option>
+					<option value="II other one checkbox 3">II other one checkbox 3</option>
+					<option value="II other one checkbox 4">II other one checkbox 4</option>
+				</select>
+			</li>
+		</ul>
+		</form>
+	</div>
+</div>
+
+<br />
+<br />
+
+
+</body>
+</html>
