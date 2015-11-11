@@ -13,7 +13,7 @@
 	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
 
 
-{{/head}}
+ {{/head}}
 
 
 {{$propositionHeader}}
@@ -40,7 +40,7 @@
 
 	<br clear="all">
 
-	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Setting up a Direct Debit
+	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Provide trader details
 	</h1>
 		
 	
@@ -52,50 +52,43 @@
 
 
 
-	<form action="evl-3-flow" method="get" class="form">
-		<input type="hidden" name="nextlink" value="evl-paydd-email">
-		<input type="hidden" name="nextbacklink" value="evl-paydd-address">
+	<form action="vm-flow" method="get" class="form">
+		<input type="hidden" name="nextlink" value="vm-acquire-vehicle-details">
 		<input type="hidden" name="regmark" value="{{defaultreg}}">
 		<input type="hidden" name="email" value="{{email}}">
 		<input type="hidden" name="paynum" value="{{paynum}}">
-		<input type="hidden" name="kind" value="{{kind}}">
 
 
 
-
-	  <!-- <form method="get" action="evl-select-postcode" class="form"> -->
-
-
-		
 		
 
 		<div class="form-group">
 
 
 			
-			{{#address}}
+			
 
 			
 			<label>Address</label>
 			<div class="address-form-line">
-			<input id="line_1" name="line_1" class="form-control form-control-1-4" type="text" value="{{line_1}}">
+			<input id="line_1" name="line_1" class="form-control form-control-1-4" type="text" value="">
 			</div>
 
 
 			<div class="address-form-line">
-			<input id="line_2" name="line_2" class="form-control form-control-1-4" type="text" value="{{line_2}}">
+			<input id="line_2" name="line_2" class="form-control form-control-1-4" type="text" value="">
 			</div>
 
 			<div class="address-form-line">
-			<input id="line_3" name="line_3" class="form-control form-control-1-4" type="text" value="{{line_3}}">
+			<input id="line_3" name="line_3" class="form-control form-control-1-4" type="text" value="">
 			</div>
 
 
 			<label>Town or city</label>
 			<div class="address-form-line">
-			<input id="post_town" name="post_town" class="form-control form-control-1-4" type="text" value="{{post_town}}">
+			<input id="post_town" name="post_town" class="form-control form-control-1-4" type="text" value="">
 			</div>
-
+			
 
 			<label>Postcode</label>
 			<div class="address-form-line">
@@ -103,12 +96,10 @@
 			</div>
 			
 
-
-			{{/address}}
-			
-
-
 		</div>
+
+
+		
 
 
 

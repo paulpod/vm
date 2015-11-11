@@ -20,7 +20,7 @@
 
 
 {{$propositionHeader}}
-  {{>includes/govuk_evlprop}}
+  {{>includes/govuk_vmacquireprop}}
 {{/propositionHeader}}
 
 {{$headerClass}}with-proposition{{/headerClass}}
@@ -44,9 +44,8 @@
 	<br clear="all">
 
 
-	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Setting up a Direct Debit
+	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Provide trader details
 	</h1>
-		
 	
 	<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Choose address
 	</h2>
@@ -54,7 +53,7 @@
 
 
 
-	<form method="get" action="evl-chosen-address" class="form">
+	<form method="get" action="chosen-address" class="form">
 		<input type="hidden" name="paynum" value="{{paynum}}">
 		<input type="hidden" name="regmark" value="{{defaultreg}}">
 		<input type="hidden" name="email" value="{{email}}">
