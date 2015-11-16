@@ -44,7 +44,7 @@
 	<br clear="all">
 
 
-	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Provide trader details
+	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Provide keeper details
 	</h1>
 	
 	<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Choose address
@@ -54,6 +54,7 @@
 
 
 	<form method="get" action="chosen-address" class="form">
+		<input type="hidden" name="nextlink" value="vm-acquire-keeper">
 		<input type="hidden" name="paynum" value="{{paynum}}">
 		<input type="hidden" name="regmark" value="{{defaultreg}}">
 		<input type="hidden" name="email" value="{{email}}">
@@ -66,11 +67,11 @@
 		
 		<p>Postcode</p>
 		
-		<p><span style="text-transform:uppercase;font-weight:700;padding-right:2em">{{postcode}}</span>  <span><a href="evl-paydd-postcode">Change</a></p>
+		<p><span style="text-transform:uppercase;font-weight:700;padding-right:2em">{{postcode}}</span>  <span><a href="vm-acquire-keeper-postcode">Change</a></p>
 
 		<p></p>
 
-		<p>Select your address from the list</p>
+		<p>Select the keeper's address from the list</p>
 
 		<div class="form-group">
 
@@ -90,7 +91,7 @@
 		</div>
 
 
-		<a href="evl-paydd-address-manually">Enter the address manually</a>
+		<a href="vm-acquire-keeper-address-manually">Enter the address manually</a>
 
 
 

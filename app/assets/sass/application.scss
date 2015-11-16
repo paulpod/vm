@@ -774,7 +774,7 @@ display: block;
 font-size: 19px;
 clear: both;
 padding: 10px;
-margin: 0.3em 0 1em -14px;
+margin: 0.3em 0 0 -14px;
 border-left: 4px solid #df3034;
 color: #df3034;
 font-weight: bold;
@@ -868,6 +868,31 @@ border-radius: 4px;
 
 
 
+
+.greybutton {
+background-color: #e0e0e0;
+position: relative;
+display: -moz-inline-stack;
+display: inline-block;
+padding: 0.3em 0.6em 0.2em 0.6em;
+border: none;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;
+-webkit-appearance: none;
+-webkit-box-shadow: 0 2px 0 #aaa;
+-moz-box-shadow: 0 2px 0 #aaa;
+box-shadow: 0 2px 0 #aaa;
+font-size: 1em;
+line-height: 1.25;
+text-decoration: none;
+-webkit-font-smoothing: antialiased;
+cursor: pointer;
+color: #fff;
+margin: 0 15px 15px 0;
+padding: 0.52632em 0.78947em 0.26316em 0.78947em;
+vertical-align: top;
+}
 
 
 li:not(#foo) > fieldset > div > span > input[type='radio'], 

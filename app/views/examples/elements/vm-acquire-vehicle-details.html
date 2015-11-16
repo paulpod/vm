@@ -32,9 +32,9 @@
 <main id="content" role="main" style="padding-bottom:0">
 
 
-	<!--<div>
+	<div>
 	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
-	</div>-->
+	</div>
 
 	<br clear="all">
 
@@ -47,7 +47,8 @@
 
 
 
-	<form method="get" action="vm-flow" class="form" data-parsley-validate>
+	<form method="get" action="vm-branch" class="form" data-parsley-validate>
+		<input type="hidden" name="nextlink" value="vm-acquire">
 	    <input type="hidden" name="regmark" value="{{defaultreg}}">
 	    <input type="hidden" name="email" value="{{email}}">
 		<input type="hidden" name="paynum" value="{{paynum}}">
@@ -56,39 +57,69 @@
 
 
 		<!-- Get the vehicle reg -->
-		<label class="form-label" for="tradername">Vehicle registration number</label>
+		<div style="margin-bottom:2em">
+		<label class="form-label" for="regmark">Vehicle registration number</label>
 
 		<span class="form-hint">eg. CU57 ABC</span>
 
-		<input id="tradername" name="tradername" autocomplete="off" class="form-control  input-large form-control-1-3" type="text" required style="text-transform:uppercase" />
+		<input id="regmark" name="regmark" autocomplete="off" class="form-control  input-large form-control-1-4" type="text" maxlength="9" required style="text-transform:uppercase"/>
+		</div>
 
 
 
 		<!-- Get the vehicle V5C doc ref number -->
-		<label class="form-label" for="tradername">Latest V5C (logbook) reference number</label>
+		<label class="form-label" for="v5c">Latest V5C (logbook) reference number</label>
 
-		<span class="form-hint">Where to find this?</span>
+		<div><details>
+        <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true">
+          <span class="summary">Where to find this</span>
+        </summary>
+        <div class="" id="details-content-0" aria-hidden="false" style="display:block;border-left:none">
+        
+        <img src="/public/images/v5c-diagram.png" width="280" height="162" style="padding:1em 0 0 0">
 
-		<input id="tradername" name="tradername" autocomplete="off" class="form-control input-large form-control-1-3" type="number" required style="text-transform:uppercase" />
+        <p style="max-width:620px">You should have received your V5C shortly after acquiring your vehicle.</p>
+          
+        </div>
+		</details></div>
+
+		<input id="v5c" name="v5c" autocomplete="off" class="form-control input-large form-control-1-3" type="number" maxlength="11" required style="text-transform:uppercase" onkeypress="numbers(this.id, event)" />
+
+
+		<!-- This is a little script to limit the above input field for a doc ref to be both number + limited to 11 digits ... unfortunately the HTML type=number and maxlength do not work together -->
+		<script>
+            function numbers(id, event) {
+                var element = $("#" + id);
+                var len = element.val().length + 1;
+                var max = element.attr("maxlength");
+
+                var cond = (46 < event.which && event.which < 58) || (46 < event.keyCode && event.keyCode < 58);
+
+                if (!(cond && len <= max)) {
+                    event.preventDefault();
+                    return false;
+                }
+            }
+        </script>
 
 		
 
 		<!-- Who is it being sold to? We ask, so we could check for fleet number later -->
 		<div class="form-group form-group-compound">
 
-		<legend style="padding:3em 0 0 0">Is the vehicle being sold to a private individual or a business?</legend>
+		<legend style="padding:3em 0 0.5em 0">Is the vehicle being sold to a private individual or a business?</legend>
 		<!-- <span class="form-hint"> Should we say why we ask? </span> -->
 
 		<fieldset class="">
 			<label for="radio-inline-1" class="block-label">
-			<input id="radio-inline-1" type="radio" name="buyertype" value="private">
+			<input id="radio-inline-1" type="radio" name="branch" value="keeper-details">
 			Private individual
 			</label>
 
 
 
 			<label for="radio-inline-2" class="block-label">
-			<input id="radio-inline-2" type="radio" name="emailreceipt" value="business">
+			<input id="radio-inline-2" type="radio" name="branch" value="business-details">
 			Business
 			</label>
 		</fieldset>
@@ -104,7 +135,7 @@
 
 
 
-		<div class="form-group" style="margin-top:4em">
+		<div class="form-group" style="margin-top:3em">
 			<input type="submit" class="button" value="Continue">
         </div>
 

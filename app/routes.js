@@ -647,7 +647,7 @@ module.exports = {
 
 
 
-     /* - - - - - - - - - - - - - - - - - - - - – */
+    /* - - - - - - - - - - - - - - - - - - - - – */
     /* FLOW for VM -- add today, etc into flows */
 
     app.get('/examples/elements/vm-flow', function (req, res) {
@@ -672,18 +672,43 @@ module.exports = {
    
 
 
-
-
-    if (kind == 'v5c') {
-        if (paynum == 1) {
-            var sorntax = "Note: You are taxing a vehicle previously declared off the road within 2 days of the end of the current month.</p><p>Your vehicle tax will start on the <strong>1st of the next month</strong>. You are not taxed until then.";
-        }
-    }
-
-    res.render('examples/elements/' + next, {'back' : back, 'defaultreg' : defaultreg, 'paynum' : paynum, 'email' : email, 'today' : today, 'kind' : kind, 'sorntax' : sorntax});
-    
+    res.render('examples/elements/' + next, {'defaultreg' : defaultreg, 'paynum' : paynum, 'email' : email, 'today' : today});
  
     });
+
+
+    /* - - - - - - - - - - - - - - - - - - - - – */
+    /* BRANCH for VM -- add today, etc into flows */
+
+    app.get('/examples/elements/vm-branch', function (req, res) {
+
+    var next = req.query.nextlink;
+    var branch = req.query.branch;
+
+    var regmark = req.query.regmark;
+    var email = req.query.email;
+    var kind = req.query.kind;
+    var paynum = req.query.paynum;
+
+    
+    if (regmark == undefined) {
+        var defaultreg = 'CU57\xA0ABC';
+    } else {
+        var defaultreg = regmark;
+    }
+
+
+    var moment = require("moment");
+    var now = moment(new Date()); 
+    var today = now.format("D MMM YYYY");
+   
+
+
+    res.render('examples/elements/' + next + '-' + branch, {'defaultreg' : defaultreg, 'paynum' : paynum, 'email' : email, 'today' : today});
+ 
+    });
+
+
 
 
 
@@ -696,6 +721,7 @@ module.exports = {
     app.get('/examples/elements/find-postcode', function (req, res) {
 
       /*var Handlebars = require('Handlebars');*/
+      var next = req.query.nextlink;
       var regmark = req.query.regmark;
       var email = req.query.email;
       var kind = req.query.kind;
@@ -719,7 +745,7 @@ module.exports = {
         }
 
         console.log(results); 
-        res.render('examples/elements/vm-acquire-address.html', {'postcode' : postcode, 'result' : results, 'defaultreg' : defaultreg, 'email' : email, 'kind' : kind, 'paynum' : paynum})
+        res.render('examples/elements/' + next + '-' + 'address.html', {'postcode' : postcode, 'result' : results, 'defaultreg' : defaultreg, 'email' : email, 'kind' : kind, 'paynum' : paynum})
 
       });
 
@@ -737,6 +763,7 @@ module.exports = {
     app.get('/examples/elements/chosen-address', function (req, res) {
 
       /*var Handlebars = require('Handlebars');*/
+      var next = req.query.nextlink;
       var regmark = req.query.regmark;
       var email = req.query.email;
       var kind = req.query.kind;
@@ -760,7 +787,7 @@ module.exports = {
         }
 
         console.log(address); 
-        res.render('examples/elements/vm-acquire-address-playback.html', {'address' : address, 'defaultreg' : defaultreg, 'email' : email, 'kind' : kind, 'paynum' : paynum})
+        res.render('examples/elements/' + next + '-' + 'address-playback.html', {'address' : address, 'defaultreg' : defaultreg, 'email' : email, 'kind' : kind, 'paynum' : paynum})
 
       });
 

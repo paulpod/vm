@@ -38,13 +38,13 @@
 <main id="content" role="main" style="padding-bottom:0">
 
 
-	<!--<div>
+	<div>
 	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
-	</div>-->
+	</div>
 
 	<br clear="all">
 
-	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Provide trader details
+	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">New keeper details
 	</h1>
 		
 	
@@ -54,7 +54,7 @@
 
 
 	<form method="get" action="find-postcode" class="form" data-parsley-validate>
-		<input type="hidden" name="nextlink" value="vm-acquire-trader">
+		<input type="hidden" name="nextlink" value="vm-acquire-keeper">
 	    <input type="hidden" name="regmark" value="{{defaultreg}}">
 	    <input type="hidden" name="email" value="{{email}}">
 		<input type="hidden" name="paynum" value="{{paynum}}">
@@ -62,20 +62,98 @@
 
 
 
-		<!-- Get the trader name, we don't have a DB to lookup -->
-		<label class="form-label" for="tradername">Trader name</label>
+		<!-- Use a single field for names wherever possible -->
+		<!-- https://www.gov.uk/service-manual/user-centred-design/resources/patterns/names.html -->
+		<!-- research to back that up https://designpatterns.hackpad.com/Peoples-names-mgFWXkwyPEt -->
+		<!-- -->
+		<!-- <label class="form-label" for="keepername">New keeper's name</label> -->
+		<!-- -->
+		<!-- <span class="form-hint">Name of the person who will become responsible for the vehicle</span> -->
+		<!-- <input id="keepername" name="keepername" autocomplete="off" class="form-control  input-large form-control-1-3" type="text" required /> -->
 
-		<span class="form-hint">Name of the company that the vehicle is being sold from</span>
+		<p>
+		<label class="form-label" for="keeperfirstname">First name(s)</label>
 
-		<input id="tradername" name="tradername" autocomplete="off" class="form-control  input-large form-control-1-3" type="text" required style="text-transform:uppercase" />
+		<input id="keeperfirstname" name="keeperfirstname" autocomplete="off" class="form-control  input-large form-control-1-3" type="text" required />
+		</p>
 
-		
+
+
+		<p>
+		<label class="form-label" for="keeperlastname">Last name</label>
+
+		<input id="keeperlastname" name="keeperfirstname" autocomplete="off" class="form-control  input-large form-control-1-3" type="text" required />
+		</p>
+
+		<br clear="all">
+
+
+		<!-- Date of birth, if optional shouldn't be asked! -->
+
+		<label class="form-label" for="dob">Date of birth (optional)</label>
+
+		<span class="form-hint">For example, 03&nbsp;&nbsp;11&nbsp;&nbsp;1992</span>
+
+
+		<fieldset>
+
+		<!-- Script to limit the DOB input fields to fix HTML type=number and maxlength not working -->
+		<script>
+            function numbers(id, event) {
+                var element = $("#" + id);
+                var len = element.val().length + 1;
+                var max = element.attr("maxlength");
+
+                var cond = (46 < event.which && event.which < 58) || (46 < event.keyCode && event.keyCode < 58);
+
+                if (!(cond && len <= max)) {
+                    event.preventDefault();
+                    return false;
+                }
+            }
+        </script>
+
+
+		<div style="float:left;width:5em">
+		<label class="form-label" for="dob-dd">Day</label>
+
+		<input id="keeperdobdd" name="dob-dd" autocomplete="off" class="form-control input-large " type="number" style="width:75%" maxlength="2" min="1" max="31" onkeypress="numbers(this.id, event)" />
+		</div>
+
+
+		<div style="float:left;width:5em">
+		<label class="form-label" for="dob-mm">Month</label>
+
+		<input id="keeperdobmm" name="dob-mm" autocomplete="off" class="form-control input-large " type="number"  style="width:75%" maxlength="2" min="1" max="12" onkeypress="numbers(this.id, event)" />
+		</div>
+
+
+		<div style="float:left;width:8em">
+		<label class="form-label" for="dob-yyy">Year</label>
+
+		<input id="keeperdobyyyy" name="dob-yyy" autocomplete="off" class="form-control input-large " type="number"  style="width:75%" maxlength="4" onkeypress="numbers(this.id, event)" />
+		</div>
+
+		<br clear="all">
+
+
+		</fieldset>
+
+
+
+
+
+
+
+
+
+
 
 		<!-- User wants email for receipts? -->
 		<div class="form-group form-group-compound">
 
-		<legend style="padding:3em 0 0 0">Do you want to provide your email address?</legend>
-		<span class="form-hint">This may help us resolve problems later.</span>
+		<legend style="padding:3em 0 0 0">Does the new keeper want an email confirmation of the sale?</legend>
+		<!-- <span class="form-hint"> Why this is good? </span> -->
 
 		<fieldset class="inline">
 			<label for="radio-inline-1" class="block-label" data-target="enteremail">
@@ -140,12 +218,9 @@ $('#email').on('blur', function(event) {
     }
   });
 });
-</script>	      
+</script>
 
-
-	    </div>
-
-
+</div>
 
 
 	    <!-- postcode address finder -->
