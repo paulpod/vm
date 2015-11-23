@@ -44,10 +44,11 @@
 
 	<br clear="all">
 
-	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Complete and confirm
+	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Confirm sale details
 	</h1>
-		
-	
+
+
+
 
 
 
@@ -62,9 +63,9 @@
 
 		<script>
 			$("#autodate").click(function () {
-			$("#keeperdobdd").val("{{todayday}}");
-			$("#keeperdobmm").val("{{todaymon}}");
-			$("#keeperdobyyyy").val("{{todayyear}}");
+			$("#sale-dd").val("{{todayday}}");
+			$("#sale-mm").val("{{todaymon}}");
+			$("#sale-yyyy").val("{{todayyear}}");
 			});
 		</script>
 
@@ -72,12 +73,12 @@
 
 
 
-		<form method="get" action="" class="form" data-parsley-validate>
-		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-check">
+		<form method="get" action="vm-flow" class="form" data-parsley-validate>
+		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-vehicle-keeperis">
 	   
 	   {{#vars}}
 	    <input type="hidden" name="tradername" value="{{tradername}}">
-	    <input type="hidden" name="tradername" value="{{traderemail}}">
+	    <input type="hidden" name="traderemail" value="{{traderemail}}">
 	    <input type="hidden" name="traderpostcode" value="{{traderpostcode}}">
 	    <input type="hidden" name="traderline1" value="{{traderline1}}">
 	    <input type="hidden" name="traderline2" value="{{traderline2}}">
@@ -86,16 +87,7 @@
 	    <input type="hidden" name="regmark" value="{{regmark}}">
 	    <input type="hidden" name="v5c" value="{{v5c}}">
 
-	    <input type="hidden" name="keeperfirstname" value="{{keeperfirstname}}">
-	    <input type="hidden" name="keeperlastname" value="{{keeperlastname}}">
-
-	    <input type="hidden" name="keeperdob" value="{{keeperdob}}">
-	    <input type="hidden" name="keeperpostcode" value="{{keeperpostcode}}">
-
-	    <input type="hidden" name="keeperaddress1" value="{{line_1}}">
-	    <input type="hidden" name="keeperaddress2" value="{{line_2}}">
-	    <input type="hidden" name="keeperaddress3" value="{{line_3}}">
-	    <input type="hidden" name="keeperposttown" value="{{post_town}}">
+	    
 	    {{/vars}}
 
 
@@ -119,23 +111,23 @@
 		<fieldset>
 
 		<div style="float:left;width:5em">
-		<label class="form-label" for="dob-dd">Day</label>
+		<label class="form-label" for="sale-dd">Day</label>
 
-		<input id="keeperdobdd" name="dob-dd" autocomplete="off" class="form-control input-large " type="number" style="width:75%" maxlength="2" min="1" max="31" onkeypress="numbers(this.id, event)" />
+		<input id="sale-dd" name="sale-dd" autocomplete="off" class="form-control input-large " type="number" style="width:75%" maxlength="2" min="1" max="31" onkeypress="numbers(this.id, event)" />
 		</div>
 
 
 		<div style="float:left;width:5em">
-		<label class="form-label" for="dob-mm">Month</label>
+		<label class="form-label" for="sale-mm">Month</label>
 
-		<input id="keeperdobmm" name="dob-mm" autocomplete="off" class="form-control input-large " type="number"  style="width:75%" maxlength="2" min="1" max="12" onkeypress="numbers(this.id, event)" />
+		<input id="sale-mm" name="sale-mm" autocomplete="off" class="form-control input-large " type="number"  style="width:75%" maxlength="2" min="1" max="12" onkeypress="numbers(this.id, event)" />
 		</div>
 
 
 		<div style="float:left;width:8em">
-		<label class="form-label" for="dob-yyy">Year</label>
+		<label class="form-label" for="sale-yyyy">Year</label>
 
-		<input id="keeperdobyyyy" name="dob-yyy" autocomplete="off" class="form-control input-large " type="number"  style="width:75%" maxlength="4" onkeypress="numbers(this.id, event)" />
+		<input id="sale-yyyy" name="sale-yyyy" autocomplete="off" class="form-control input-large " type="number"  style="width:75%" maxlength="4" onkeypress="numbers(this.id, event)" />
 		</div>
 
 		<br clear="all">
@@ -159,7 +151,7 @@
 
 
 
-		<div class="form-group" style="margin-top:4em">
+		<div class="form-group" style="margin:2em 0 3em 0">
 			<input type="submit" class="button" value="Continue">
         </div>
 

@@ -52,17 +52,47 @@
 
 	<form method="get" action="" class="form" data-parsley-validate>
 		<input type="hidden" name="nextlink" value="vm-acquire-check">
-	    <input type="hidden" name="mode" value="check">
+	    <input type="hidden" name="mode" value="checker">
+
+
+	    {{#vars}}
+		<input type="hidden" name="tradername" value="{{tradername}}">
+		<input type="hidden" name="tradername" value="{{traderemail}}">
+		<input type="hidden" name="traderpostcode" value="{{traderpostcode}}">
+		<input type="hidden" name="traderline1" value="{{traderline1}}">
+		<input type="hidden" name="traderline2" value="{{traderline2}}">
+		<input type="hidden" name="traderline3" value="{{traderline3}}">
+		<input type="hidden" name="traderposttown" value="{{traderposttown}}">
+		<input type="hidden" name="regmark" value="{{regmark}}">
+		<input type="hidden" name="v5c" value="{{v5c}}">
+		<input type="hidden" name="saledate" value="{{saledate}}">
+		<input type="hidden" name="mileage" value="{{mileage}}">
+
+		<input type="hidden" name="keeperfirstname" value="{{keeperfirstname}}">
+		<input type="hidden" name="keeperlastname" value="{{keeperlastname}}">
+
+		<input type="hidden" name="keeperdob" value="{{keeperdob}}">
+		<input type="hidden" name="keeperpostcode" value="{{keeperpostcode}}">
+		<input type="hidden" name="keeperline1" value="{{keeperline1}}">
+		<input type="hidden" name="keeperline2" value="{{keeperline2}}">
+		<input type="hidden" name="keeperline3" value="{{keeperline3}}">
+		<input type="hidden" name="keeperposttown" value="{{keeperposttown}}">
+
+
+		{{/vars}}
+
 	    
 
 
 		<h2>Trader details</h2>
 		
 
+		{{#vars}}
+
 		<div>
 	        <h3>Name</h3>
 	        <div class="data-wrap">
-	            <p>Bobs Wheels {{tradername}}</p>
+	            <p>{{tradername}}</p>
 	        </div>
 	        <a href="vm-acquire-trader-name" class="change">
 	            Change<span class="visuallyhidden"> trader name</span>
@@ -72,7 +102,7 @@
 	    <div>
 	        <h3>Email</h3>
 	        <div class="data-wrap">
-	            <p>bob@bobswheels.com {{traderemail}}</p>
+	            <p>{{traderemail}}</p>
 	        </div>
 	        <a href="vm-acquire-trader-email" class="change">
 	            Change<span class="visuallyhidden"> trader email</span>
@@ -83,21 +113,14 @@
 	        <h3>Address</h3>
 	        <div class="data-wrap">
 
-	        <p>15 Bethesda Road<br>
-			Pontyberem<br>
-			Llanelli<br>
-			SA15 5LP</p>
+	        <p>{{traderline1}}<br>
+			{{traderline2}}<br>
+			{{traderline3}}
+			{{traderposttown}}<br>
+			{{traderpostcode}}</p>
 
 
-	        <!-- {{#address}}
-			
-			{{line_1}}
-			{{line_2}}
-			{{line_3}}
-			{{post_town}}
-			{{postcode}}
-
-			{{/address}} -->
+	       
 
 	        </div>
 	        <a href="vm-acquire-trader-address" class="change">
@@ -113,7 +136,7 @@
 		<div>
 	        <h3>Registration number</h3>
 	        <div class="data-wrap">
-	            <p>CU57 ABC {{regmark}}</p>
+	            <p>{{regmark}}</p>
 
 	        </div>
 	        <a href="vm-acquire-vrn" class="change">
@@ -126,7 +149,7 @@
 	        <div class="data-wrap">
 	        <p>Alfa Romeo<br>
 	        Spider<br>
-	        122,076 miles</p>
+	        {{mileage}} miles</p>
             </div>
         </div>
 
@@ -139,7 +162,7 @@
 		<div>
 	        <h3>Name</h3>
 	        <div class="data-wrap">
-	            <p>David Jones {{keepername}}</p>
+	            <p>{{keeperfirstname}} {{keeperlastname}}</p>
 	        </div>
 	        <a href="vm-acquire-keeper-name" class="change">
 	            Change<span class="visuallyhidden"> keeper name</span>
@@ -147,9 +170,19 @@
 	    </div>
 
 	    <div>
+	        <h3>Date of birth</h3>
+	        <div class="data-wrap">
+	            <p>{{keeperdob}}</p>
+	        </div>
+	        <a href="vm-acquire-keeper-name" class="change">
+	            Change<span class="visuallyhidden"> keeper date of birth</span>
+	        </a>
+	    </div>
+
+	    <div>
 	        <h3>Email</h3>
 	        <div class="data-wrap">
-	            <p>d.jones@sky.com {{traderemail}}</p>
+	            <p>{{keeperemail}}</p>
 	        </div>
 	        <a href="vm-acquire-keeper-email" class="change">
 	            Change<span class="visuallyhidden"> keeper email</span>
@@ -160,20 +193,11 @@
 	        <h3>Address</h3>
 	        <div class="data-wrap">
 
-	        <p>64 Barbican Road<br>
-			Swansea<br>
-			SA1 8AB</p>
-
-
-	        <!-- {{#address}}
-			
-			{{line_1}}
-			{{line_2}}
-			{{line_3}}
-			{{post_town}}
-			{{postcode}}
-
-			{{/address}} -->
+	        <p>{{keeperline1}}<br>
+			{{keeperline2}}
+			{{keeperline3}}
+			{{keeperposttown}}<br>
+			{{keeperpostcode}}</p>
 
 	        </div>
 	        <a href="vm-acquire-keeper-address" class="change">
@@ -181,12 +205,14 @@
 	        </a>
 	    </div>
 
+	    {{/vars}}
+
 
 		
 
 
 
-		<div class="form-group" style="margin-top:4em">
+		<div class="form-group" style="margin:2em 0 3em 0">
 			<input type="submit" class="button" value="Continue">
         </div>
 

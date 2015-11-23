@@ -49,10 +49,20 @@
 
 	<form method="get" action="vm-flow" class="form" data-parsley-validate>
 		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-vehicle-v5c">
-	    <input type="hidden" name="regmark" value="{{defaultreg}}">
-	    <input type="hidden" name="email" value="{{email}}">
-		<input type="hidden" name="paynum" value="{{paynum}}">
-		<input type="hidden" name="kind" value="{{kind}}">
+	    
+	    {{#vars}}
+		<input type="hidden" name="tradername" value="{{tradername}}">
+		<input type="hidden" name="traderemail" value="{{traderemail}}">
+		<input type="hidden" name="traderpostcode" value="{{traderpostcode}}">
+
+
+		<input type="hidden" name="traderline1" value="{{line_1}}">
+		<input type="hidden" name="traderline2" value="{{line_2}}">
+		<input type="hidden" name="traderline3" value="{{line_3}}">
+		<input type="hidden" name="traderposttown" value="{{post_town}}">
+	
+
+		{{/vars}}
 
 
 

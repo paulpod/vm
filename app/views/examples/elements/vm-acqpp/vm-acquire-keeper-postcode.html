@@ -55,10 +55,27 @@
 
 	<form method="get" action="find-postcode" class="form" data-parsley-validate>
 		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-keeper">
-	    <input type="hidden" name="regmark" value="{{defaultreg}}">
-	    <input type="hidden" name="email" value="{{email}}">
-		<input type="hidden" name="paynum" value="{{paynum}}">
-		<input type="hidden" name="kind" value="{{kind}}">
+	    
+	    {{#vars}}
+		<input type="hidden" name="tradername" value="{{tradername}}">
+		<input type="hidden" name="traderemail" value="{{traderemail}}">
+		<input type="hidden" name="traderpostcode" value="{{traderpostcode}}">
+		<input type="hidden" name="traderline1" value="{{traderline1}}">
+		<input type="hidden" name="traderline2" value="{{traderline2}}">
+		<input type="hidden" name="traderline3" value="{{traderline3}}">
+		<input type="hidden" name="traderposttown" value="{{traderposttown}}">
+		<input type="hidden" name="regmark" value="{{regmark}}">
+		<input type="hidden" name="v5c" value="{{v5c}}">
+		<input type="hidden" name="saledate" value="{{saledate}}">
+		<input type="hidden" name="mileage" value="{{mileage}}">
+
+		<input type="hidden" name="keeperfirstname" value="{{keeperfirstname}}">
+		<input type="hidden" name="keeperlastname" value="{{keeperlastname}}">
+	    <input type="hidden" name="keeperemail" value="{{keeperemail}}">
+
+		<input type="hidden" name="keeperdob" value="{{keeperdob}}">
+
+		{{/vars}}
 
 
 

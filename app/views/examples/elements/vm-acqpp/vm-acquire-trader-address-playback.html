@@ -53,11 +53,15 @@
 
 	<form action="vm-flow" method="get" class="form">
 		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-vehicle-vrn">
-		<input type="hidden" name="regmark" value="{{defaultreg}}">
-		<input type="hidden" name="email" value="{{email}}">
-		<input type="hidden" name="paynum" value="{{paynum}}">
-		<input type="hidden" name="kind" value="{{kind}}">
+		
+		{{#vars}}
+		<input type="hidden" name="tradername" value="{{tradername}}">
+		<input type="hidden" name="traderemail" value="{{traderemail}}">
+		<input type="hidden" name="traderpostcode" value="{{traderpostcode}}">
 
+		{{/vars}}
+
+		
 
 
 		
