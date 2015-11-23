@@ -1,0 +1,113 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+	<!-- ordering of JS load is important !-->
+	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/parsley.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/mailcheck.min.js"></script>
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_vmacquireprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+	<!-- <div>
+	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+	</div> -->
+
+
+
+	<div class="grid-row">
+    <div class="column-two-thirds">
+
+	    <div class="application-confirmation" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" style="margin-top:1em;padding:1em">
+	      <h1>✔ Thank you</h1>
+	      <h2 style="padding-bottom:0.5em">Your application is being processed:</h2>
+
+	      <h3>Give the V5C/2 (green slip) to the new keeper and<br>destroy the rest of the V5C</h2>
+
+
+	    </div>
+
+
+
+
+		<br clear="all">
+
+		<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">What happens next?
+		</h2>
+
+		<ul class="list-bullet">
+			<li>Within 5 working days we will send a new V5C (log book) to the new keeper.</li>
+			<li>If they do not receive a new V5C in 2 weeks thay must contact DVLA Customer Enquiries</li>
+		</ul>
+
+
+
+		<!-- Why repeat this twice on the same small page? - mental!
+
+		<div class="help-notice">
+		  <p style="padding-top:0.2em">Please print this page and pass it to the customer along with the V5C/2 slip from the vehicle registration certificate (V5C)</p>
+		</div>
+
+		-->
+
+	
+
+
+
+		<div class="form-group" style="margin:2.5em 0 4em 0">
+			<input type="submit" class="button" value="Print">
+
+			<a href="#" class="greybutton">Notify another sale</a>
+
+			<a href="#" class="greybutton">Finish</a>
+
+        </div>
+
+    </form>
+
+		
+
+
+
+
+
+	
+
+   
+ </main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

@@ -1,0 +1,104 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+	<!-- ordering of JS load is important !-->
+	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_vmacquireprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+	<div>
+	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+	</div>
+
+	<br clear="all">
+
+	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Provide vehicle details
+	</h1>
+		
+	
+	<!--<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">sub head
+	</h2>-->
+
+
+
+	<form method="get" action="vm-flow" class="form" data-parsley-validate>
+		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-vehicle-v5c">
+	    <input type="hidden" name="regmark" value="{{defaultreg}}">
+	    <input type="hidden" name="email" value="{{email}}">
+		<input type="hidden" name="paynum" value="{{paynum}}">
+		<input type="hidden" name="kind" value="{{kind}}">
+
+
+
+		<!-- Get the vehicle reg -->
+		<div style="margin-bottom:2em">
+		<label class="form-label" for="regmark">Vehicle registration number</label>
+
+		<span class="form-hint">eg. CU57 ABC</span>
+
+		<input id="regmark" name="regmark" autocomplete="off" class="form-control  input-large form-control-1-4" type="text" maxlength="9" required style="text-transform:uppercase"/>
+		</div>
+
+
+
+		
+
+
+
+	    <br clear="all">
+
+
+		
+
+
+
+
+		<div class="form-group" style="margin-top:3em">
+			<input type="submit" class="button" value="Continue">
+        </div>
+
+    </form>
+
+		
+
+
+
+
+
+	
+
+   
+ </main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

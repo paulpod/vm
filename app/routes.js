@@ -668,11 +668,14 @@ module.exports = {
 
     var moment = require("moment");
     var now = moment(new Date()); 
-    var today = now.format("D MMM YYYY");
+    var today = now.format("D - MM - YYYY");
+    var todayday = now.format("D");
+    var todaymon = now.format("MM");
+    var todayyear = now.format("YYYY");
    
 
 
-    res.render('examples/elements/' + next, {'defaultreg' : defaultreg, 'paynum' : paynum, 'email' : email, 'today' : today});
+    res.render('examples/elements/' + next, {'defaultreg' : defaultreg, 'paynum' : paynum, 'email' : email, 'today' : today, 'todayday' : todayday, 'todaymon' : todaymon, 'todayyear' : todayyear});
  
     });
 

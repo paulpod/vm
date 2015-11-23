@@ -1,0 +1,117 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+	<!-- ordering of JS load is important !-->
+	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_vmacquireprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+	<div>
+	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+	</div>
+
+	<br clear="all">
+
+	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">About the new keeper
+	</h1>
+		
+	
+	<!--<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">sub head
+	</h2>-->
+
+
+
+	<form method="get" action="vm-branch" class="form" data-parsley-validate>
+		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire">
+	    <input type="hidden" name="regmark" value="{{defaultreg}}">
+	    <input type="hidden" name="email" value="{{email}}">
+		<input type="hidden" name="paynum" value="{{paynum}}">
+		<input type="hidden" name="kind" value="{{kind}}">
+
+
+
+		
+
+
+		
+
+		<!-- Who is it being sold to? We ask, so we could check for fleet number later -->
+		<div class="form-group form-group-compound">
+
+		<legend style="padding:0 0 0.5em 0">Is the new keeper a private individual or a business?</legend>
+		<!-- <span class="form-hint"> Should we say why we ask? </span> -->
+
+		<fieldset class="">
+			<label for="radio-inline-1" class="block-label">
+			<input id="radio-inline-1" type="radio" name="branch" value="keeper-name">
+			Private individual
+			</label>
+
+
+
+			<label for="radio-inline-2" class="block-label">
+			<input id="radio-inline-2" type="radio" name="branch" value="business-name">
+			Business
+			</label>
+		</fieldset>
+
+	    </div>
+
+
+	    <br clear="all">
+
+
+		
+
+
+
+
+		<div class="form-group" style="margin-top:3em">
+			<input type="submit" class="button" value="Continue">
+        </div>
+
+    </form>
+
+		
+
+
+
+
+
+	
+
+   
+ </main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
