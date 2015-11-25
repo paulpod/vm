@@ -9,8 +9,13 @@ var path = require('path'),
     password = process.env.PASSWORD,
     env = process.env.NODE_ENV || 'development';
 
+
+ var session = require('express-session')
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
     // Moment to grab the date and do that in places
     var moment = require("moment");
+
+    var objectMerge = require("object-merge");
 
 
 
@@ -41,6 +46,10 @@ app.use(express.favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 
 
 // send assetPath to all views
 app.use(function (req, res, next) {
+  var sess = req.session
+//console.log(sess);
+ 
+
   res.locals({'assetPath': '/public/'});
   next();
 });
@@ -73,5 +82,5 @@ app.get(/^\/([^.]+)$/, function (req, res) {
 
 app.listen(port);
 console.log('');
-console.log('EVL - Listening on port ' + port);
+console.log('DVLA Vehicle Management - Listening on port ' + port);
 console.log('');

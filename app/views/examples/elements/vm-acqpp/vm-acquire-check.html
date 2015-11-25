@@ -51,7 +51,7 @@
 
 
 	<form method="get" action="" class="form" data-parsley-validate>
-		<input type="hidden" name="nextlink" value="vm-acquire-check">
+		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-end">
 	    <input type="hidden" name="mode" value="checker">
 
 
@@ -94,7 +94,7 @@
 	        <div class="data-wrap">
 	            <p>{{tradername}}</p>
 	        </div>
-	        <a href="vm-acquire-trader-name" class="change">
+	        <a href="vm-acqpp/vm-acquire-trader-name?mode=checker" class="change">
 	            Change<span class="visuallyhidden"> trader name</span>
 	        </a>
 	    </div>
@@ -104,7 +104,7 @@
 	        <div class="data-wrap">
 	            <p>{{traderemail}}</p>
 	        </div>
-	        <a href="vm-acquire-trader-email" class="change">
+	        <a href="vm-acqpp/vm-acquire-trader-email?mode=checker" class="change">
 	            Change<span class="visuallyhidden"> trader email</span>
 	        </a>
 	    </div>
@@ -123,7 +123,7 @@
 	       
 
 	        </div>
-	        <a href="vm-acquire-trader-address" class="change">
+	        <a href="vm-acqpp/vm-acquire-trader-address?mode=checker" class="change">
 	            Change<span class="visuallyhidden"> trader address</span>
 	        </a>
 	    </div>
@@ -139,7 +139,7 @@
 	            <p>{{regmark}}</p>
 
 	        </div>
-	        <a href="vm-acquire-vrn" class="change">
+	        <a href="vm-acqpp/vm-acquire-vehicle-vrn?mode=checker" class="change">
 	            Change<span class="visuallyhidden"> vehicle details</span>
 	        </a>
 	    </div>
@@ -149,7 +149,10 @@
 	        <div class="data-wrap">
 	        <p>Alfa Romeo<br>
 	        Spider<br>
-	        {{mileage}} miles</p>
+	        {{mileage}} Miles</p>
+
+	        <p>Date of this sale: {{saledate}}</p>
+
             </div>
         </div>
 
@@ -164,7 +167,7 @@
 	        <div class="data-wrap">
 	            <p>{{keeperfirstname}} {{keeperlastname}}</p>
 	        </div>
-	        <a href="vm-acquire-keeper-name" class="change">
+	        <a href="vm-acqpp/vm-acquire-keeper-name?mode=checker" class="change">
 	            Change<span class="visuallyhidden"> keeper name</span>
 	        </a>
 	    </div>
@@ -174,7 +177,7 @@
 	        <div class="data-wrap">
 	            <p>{{keeperdob}}</p>
 	        </div>
-	        <a href="vm-acquire-keeper-name" class="change">
+	        <a href="vm-acqpp/vm-acquire-keeper-dob?mode=checker" class="change">
 	            Change<span class="visuallyhidden"> keeper date of birth</span>
 	        </a>
 	    </div>
@@ -184,7 +187,7 @@
 	        <div class="data-wrap">
 	            <p>{{keeperemail}}</p>
 	        </div>
-	        <a href="vm-acquire-keeper-email" class="change">
+	        <a href="vm-acqpp/vm-acquire-keeper-email?mode=checker" class="change">
 	            Change<span class="visuallyhidden"> keeper email</span>
 	        </a>
 	    </div>
@@ -200,7 +203,7 @@
 			{{keeperpostcode}}</p>
 
 	        </div>
-	        <a href="vm-acquire-keeper-address" class="change">
+	        <a href="vm-acqpp/vm-acquire-keeper-address?mode=checker" class="change">
 	            Change<span class="visuallyhidden"> keeper address</span>
 	        </a>
 	    </div>
@@ -210,6 +213,18 @@
 
 		
 
+
+		<h3 style="margin:1em 0">Check the details above and tick the consent box below</h3>
+
+		<!-- user must check details, change if required 
+		- - and confirm all OK + consent of new keeper -->
+		
+		    <label for="check-inline-1" class="block-label">
+		    <input id="check-inline-1" type="checkbox"  name="consent" value="yes">
+		    I have the consent of the keeper named to notify the DVLA
+		    </label>
+
+		
 
 
 		<div class="form-group" style="margin:2em 0 3em 0">

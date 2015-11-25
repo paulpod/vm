@@ -44,24 +44,36 @@
 
 
 
-	<div class="grid-row">
-    <div class="column-two-thirds">
-
-	    <div class="application-confirmation" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" style="margin-top:1em;padding:1em">
+	<div style="max-width:640px">
+    
+	    <div class="application-confirmation" style="margin-top:1em;padding:1em">
 	      <h1>✔ Thank you</h1>
-	      <h2 style="padding-bottom:0.5em">Your application is being processed:</h2>
+	      <h2 style="padding-bottom:0.5em">Your application is being processed</h2>
 
-	      <h3>Give the V5C/2 (green slip) to the new keeper and<br>destroy the rest of the V5C</h2>
+	      {{#vars}}
+	      <p>Transaction ID: {{regmark}} &ndash; {{v5c}}</p>
+	      {{/vars}}
 
+	      <p>Transaction date: {{today}}</p>
 
 	    </div>
 
 
 
 
+		<div class="help-notice">
+		  <p style="padding-top:0.2em">Please print this page and pass it to the customer along with the V5C/2 slip from the vehicle registration certificate (V5C)</p>
+
+		  <p>Destroy the rest of the V5C</p>
+		</div>
+
+
+
+
+
 		<br clear="all">
 
-		<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">What happens next?
+		<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">What happens next
 		</h2>
 
 		<ul class="list-bullet">
@@ -71,14 +83,6 @@
 
 
 
-		<!-- Why repeat this twice on the same small page? - mental!
-
-		<div class="help-notice">
-		  <p style="padding-top:0.2em">Please print this page and pass it to the customer along with the V5C/2 slip from the vehicle registration certificate (V5C)</p>
-		</div>
-
-		-->
-
 	
 
 
@@ -86,23 +90,16 @@
 		<div class="form-group" style="margin:2.5em 0 4em 0">
 			<input type="submit" class="button" value="Print">
 
-			<a href="#" class="greybutton">Notify another sale</a>
+			<a href="vm-acqpp/vm-acquire-trader-name" class="greybutton">Notify another sale</a>
 
 			<a href="#" class="greybutton">Finish</a>
 
         </div>
 
-    </form>
+    
 
-		
+	</div>
 
-
-
-
-
-	
-
-   
  </main><!-- / #page-container -->
 {{/content}}
 
