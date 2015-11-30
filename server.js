@@ -46,9 +46,7 @@ app.use(express.favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 
 
 // send assetPath to all views
 app.use(function (req, res, next) {
-  var sess = req.session
-//console.log(sess);
- 
+  
 
   res.locals({'assetPath': '/public/'});
   next();
