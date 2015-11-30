@@ -25,6 +25,7 @@
     "ideal-postcodes": "0.2.5",
     "mailcheck": "^1.1.1",
     "merge": "^1.2.0",
+    "object-merge": "2.5.1",
     "minimist": "0.0.8",
     "moment": "2.10.2",
     "node-sass": "1.2.3",
