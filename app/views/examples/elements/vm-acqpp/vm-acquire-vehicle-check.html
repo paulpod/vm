@@ -58,7 +58,7 @@
 	
 
 	<div class="help-notice">
-      <p style="padding-top:0.2em;max-width:600px;">If the details above do not match the vehicle to be sold, please send the registration certificate V5C with a covering letter to the DVLA, Swansea, SA99 1DZ</p>
+      <p style="padding-top:0.2em;max-width:600px;margin-bottom:0">If the details above do not match the vehicle to be sold, please send the registration certificate V5C with a covering letter to the DVLA, Swansea, SA99 1DZ</p>
     </div>
 		
 	
@@ -68,26 +68,18 @@
 		<form method="get" action="vm-flow" class="form" data-parsley-validate>
 		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-vehicle-sale">
 	   
-	   <!--{{#vars}}
-	    <input type="hidden" name="tradername" value="{{tradername}}">
-	    <input type="hidden" name="traderemail" value="{{traderemail}}">
-	    <input type="hidden" name="traderpostcode" value="{{traderpostcode}}">
-	    <input type="hidden" name="traderline1" value="{{traderline1}}">
-	    <input type="hidden" name="traderline2" value="{{traderline2}}">
-	    <input type="hidden" name="traderline3" value="{{traderline3}}">
-	    <input type="hidden" name="traderposttown" value="{{traderposttown}}">
-	    <input type="hidden" name="regmark" value="{{regmark}}">
-	    <input type="hidden" name="v5c" value="{{v5c}}">
-	    
-	    {{/vars}}-->
+	   
+	   
 
 
 
 
 
-		<div class="form-group" style="margin:2em 0 3em 0">
+		<!--<div class="form-group" style="margin:2em 0 3em 0">
 			<input type="submit" class="button" value="Continue">
-        </div>
+        </div>-->
+
+        {{{button}}}
 
     </form>
 

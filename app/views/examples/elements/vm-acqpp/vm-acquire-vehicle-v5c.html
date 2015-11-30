@@ -50,27 +50,15 @@
 	<form method="get" action="vm-flow" class="form" data-parsley-validate>
 		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-vehicle-check">
 	    
-	    <!--{{#vars}}
-		<input type="hidden" name="tradername" value="{{tradername}}">
-		<input type="hidden" name="traderemail" value="{{traderemail}}">
-		<input type="hidden" name="traderpostcode" value="{{traderpostcode}}">
-		<input type="hidden" name="traderline1" value="{{traderline1}}">
-		<input type="hidden" name="traderline2" value="{{traderline2}}">
-		<input type="hidden" name="traderline3" value="{{traderline3}}">
-		<input type="hidden" name="traderposttown" value="{{traderposttown}}">
-		<input type="hidden" name="regmark" value="{{regmark}}">
-
-		{{/vars}}-->
-
-
-
+	    
+	    
 		
 
 
 		<!-- Get the vehicle V5C doc ref number -->
 		<label class="form-label" for="v5c">Latest V5C (logbook) reference number</label>
 
-		<div><details>
+		<div style="margin:0.3em 0"><details>
         <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true">
           <span class="summary">Where to find this</span>
         </summary>
@@ -83,7 +71,10 @@
         </div>
 		</details></div>
 
+		
+		<div  style="margin-bottom:0em">
 		<input id="v5c" name="v5c" autocomplete="off" class="form-control input-large form-control-1-3" type="number" maxlength="11" required style="text-transform:uppercase" onkeypress="numbers(this.id, event)" />
+		</div>
 
 
 		<!-- This is a little script to limit the above input field for a doc ref to be both number + limited to 11 digits ... unfortunately the HTML type=number and maxlength do not work together -->
@@ -113,9 +104,11 @@
 
 
 
-		<div class="form-group" style="margin-top:3em">
+		<!--<div class="form-group" style="margin-top:3em">
 			<input type="submit" class="button" value="Continue">
-        </div>
+        </div>-->
+
+        {{{button}}}
 
     </form>
 

@@ -51,7 +51,7 @@
 	      <h2 style="padding-bottom:0.5em">Your application is being processed</h2>
 
 	      {{#vars}}
-	      <p>Transaction ID: {{regmark}} &ndash; {{v5c}}</p>
+	      <p>Transaction ID: <span style="text-transform:uppercase"> {{regmark}} &ndash; {{v5c}}</span></p>
 	      {{/vars}}
 
 	      <p>Transaction date: {{today}}</p>
@@ -90,9 +90,9 @@
 		<div class="form-group" style="margin:2.5em 0 4em 0">
 			<input type="submit" class="button" value="Print">
 
-			<a href="vm-acqpp/vm-acquire-trader-name" class="greybutton">Notify another sale</a>
+			<a href="vm-acqpp/vm-acquire-trader-name" class="greybutton" style="color:black">Notify another sale</a>
 
-			<a href="#" class="greybutton">Finish</a>
+			<a href="#" class="greybutton" style="color:black">Finish</a>
 
         </div>
 

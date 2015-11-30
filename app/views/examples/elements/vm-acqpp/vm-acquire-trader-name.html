@@ -44,7 +44,7 @@
 
 	<br clear="all">
 
-	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Provide trader details
+	<h1 class="heading-large" style="padding:0;margin:1.48em 0 1em 0">Provide trader details
 	</h1>
 		
 	
@@ -62,18 +62,21 @@
 		<label class="form-label" for="tradername">Trader name</label>
 
 		<span class="form-hint">Name of the company that the vehicle is being sold from</span>
-
-		<input id="tradername" name="tradername" autocomplete="off" class="form-control  input-large form-control-1-3" type="text" required style="text-transform:uppercase" />
-
+{{#vars}}
+		<input id="tradername" name="tradername" autocomplete="off" class="form-control  input-large form-control-1-3" type="text" value="{{tradername}}" required style="text-transform:uppercase;margin:0.2em 0 0.75em 0" />
+{{/vars}}
 		
 
 		
 
 
 
-		<div class="form-group" style="margin-top:4em">
+		<!--<div class="form-group" style="margin-top:4em">
 			<input type="submit" class="button" value="Continue">
-        </div>
+        </div>-->
+
+
+        {{{button}}}
 
     </form>
 

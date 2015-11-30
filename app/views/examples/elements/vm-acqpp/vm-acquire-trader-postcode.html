@@ -57,19 +57,15 @@
 	<form method="get" action="find-postcode" class="form" data-parsley-validate>
 		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-trader">
 
-		<!--{{#vars}}
-		<input type="hidden" name="tradername" value="{{tradername}}">
-		<input type="hidden" name="traderemail" value="{{traderemail}}">
 		
-		{{/vars}}-->
-
-
+		
 		
 	    <!-- postcode address finder -->
 	    <div style="margin-top:2em">
 		    <label class="form-label" for="postcode">Postcode</label>
-
-			<input id="postcode" name="postcode" autocomplete="off" class="form-control input-large form-control-1-4" type="text" required style="text-transform:uppercase">
+{{#vars}}
+			<input id="postcode" name="postcode" value="{{traderpostcode}}" autocomplete="off" class="form-control input-large form-control-1-4" type="text" required style="text-transform:uppercase">
+{{/vars}}
 		</div>
 
 
@@ -78,6 +74,7 @@
 		<div class="form-group" style="margin-top:4em">
 			<input type="submit" class="button" value="Find address">
         </div>
+
 
     </form>
 

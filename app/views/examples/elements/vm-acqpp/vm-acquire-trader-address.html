@@ -56,11 +56,7 @@
 	<form method="get" action="chosen-address" class="form">
 		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-trader">
 		
-		<!--{{#vars}}
-		<input type="hidden" name="tradername" value="{{tradername}}">
-		<input type="hidden" name="traderemail" value="{{traderemail}}">
-
-		{{/vars}}-->
+	
 
 		<input type="hidden" name="traderpostcode" value='{{postcode}}'>
 
@@ -71,7 +67,7 @@
 		
 		<p>Postcode</p>
 		
-		<p><span style="text-transform:uppercase;font-weight:700;padding-right:2em">{{postcode}}</span>  <span><a href="vm-acquire-trader-postcode">Change</a></p>
+		<p><span style="text-transform:uppercase;font-weight:700;padding-right:2em">{{postcode}}</span>  <span><a href="vm-acquire-trader-postcode">Change</a></span></p>
 
 		<p></p>
 
@@ -103,12 +99,10 @@
 			<input type="submit" class="button" value="Select address">
         </div>
 
+        {{{button}}}
 
 
-
-
-
-
+	</form>
 
 
    

@@ -22,59 +22,144 @@ module.exports = {
     app.get('/examples/elements/vm-flow', function (req, res, next) {
 
 
-
+    // get the next page
     var next = req.query.nextlink;
-    
 
+    // as long as it's not trying to return from a check/change
+    if(/chexx/.test(next)){
+      var next = 'vm-acqpp/vm-acquire-check';
+    }
+
+
+    // get all the other variables from the page
     var pagevars = req.query;
+
+    // get the older variables from the session
+    var objectMerge = require('object-merge');
+    var sess = req.session;
+    sessvars = sess.vars;
+
+console.log(sess.vars);
+
+    // merge the sets of variables from
+    // the page and the session
+    var merged = objectMerge(sessvars, pagevars);
+    sess.vars = merged;
+
+    
+console.log(merged);
+
+   
     
 
-
+    //doing things with dates, but
+    //only used on a couple of pages
     var moment = require("moment");
     var now = moment(new Date()); 
     var today = now.format("D - MM - YYYY");
     var todayday = now.format("D");
     var todaymon = now.format("MM");
     var todayyear = now.format("YYYY");
+
+    var continuelink = "<div class='form-group' style='margin-top:2em'><input type='submit' class='button' value='Continue'></div>"
    
-var objectMerge = require('object-merge');
-    var sess = req.session;
-
-    sessvars = sess.vars;
-    var merged = objectMerge(sessvars, pagevars);
-
-    console.log(merged);
-    sess.vars = merged;
-
    
 
-
-
-    res.render('examples/elements/' + next, {'vars' : pagevars, 'today' : today, 'todayday' : todayday, 'todaymon' : todaymon, 'todayyear' : todayyear});
- 
+    res.render('examples/elements/' + next, {'button' : continuelink, 'vars' : merged, 'today' : today, 'todayday' : todayday, 'todaymon' : todaymon, 'todayyear' : todayyear});
     });
+
+
+
 
 
     /* - - - - - - - - - - - - - - - - - - - - – */
     /* BRANCH for VM -- add today, etc into flows */
 
-    app.get('/examples/elements/vm-branch', function (req, res) {
+    app.get('/examples/elements/vm-branch', function (req, res, next) {
 
     var next = req.query.nextlink;
     var branch = req.query.branch;
-    var vars = req.query;
+
+    // get all the other variables from the page
+    var pagevars = req.query;
+
+    // get the older variables from the session
+    var objectMerge = require('object-merge');
+    var sess = req.session;
+    sessvars = sess.vars;
+
+    // merge the sets of variables from
+    // the page and the session
+    var merged = objectMerge(sessvars, pagevars);
+    sess.vars = merged;
+
+    console.log(sess.vars);
 
 
 
     var moment = require("moment");
     var now = moment(new Date()); 
     var today = now.format("D MMM YYYY");
+
+    var continuelink = "<div class='form-group' style='margin-top:2em'><input type='submit' class='button' value='Continue'></div>"
+   
    
 
 
-    res.render('examples/elements/' + next + '-' + branch, {'vars' : vars, 'today' : today});
+    res.render('examples/elements/' + next + '-' + branch, {'button' : continuelink, 'vars' : merged, 'today' : today});
  
     });
+
+
+
+
+
+
+
+
+    /* - - - - - - - - - - - - - - - - - - - - – - - - */
+    /* CHECKER for VM -- go back and change an answer */
+
+    app.get('/examples/elements/vm-check', function (req, res, next) {
+console.log('started checker for vm script');
+
+    // get the page to jump back to
+    var next = req.query.checklink;
+
+    // get all the other variables from the page
+    var pagevars = req.query;
+
+    // get the older variables from the session
+    var objectMerge = require('object-merge');
+    var sess = req.session;
+    sessvars = sess.vars;
+
+    // merge the sets of variables from
+    // the page and the session
+    var merged = objectMerge(sessvars, pagevars);
+    sess.vars = merged;
+
+    console.log(sess.vars);
+
+
+   
+    
+
+    //doing things with dates, but
+    //only used on a couple of pages
+    var moment = require("moment");
+    var now = moment(new Date()); 
+    var today = now.format("D - MM - YYYY");
+    var todayday = now.format("D");
+    var todaymon = now.format("MM");
+    var todayyear = now.format("YYYY");
+
+    var changelink = "<div class='form-group' style='margin-top:2em'><input type='hidden' name='nextlink' value='chexx'><input type='submit' class='button' value='Save change'></div>"
+   
+
+    res.render('examples/elements/' + next, {'button' : changelink, 'vars' : merged, 'today' : today, 'todayday' : todayday, 'todaymon' : todaymon, 'todayyear' : todayyear});
+    });
+
 
 
 

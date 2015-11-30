@@ -50,47 +50,29 @@
 	<form method="get" action="vm-flow" class="form" data-parsley-validate>
 		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-vehicle-v5c">
 	    
-	    <!--{{#vars}}
-		<input type="hidden" name="tradername" value="{{tradername}}">
-		<input type="hidden" name="traderemail" value="{{traderemail}}">
-		<input type="hidden" name="traderpostcode" value="{{traderpostcode}}">
-
-
-		<input type="hidden" name="traderline1" value="{{line_1}}">
-		<input type="hidden" name="traderline2" value="{{line_2}}">
-		<input type="hidden" name="traderline3" value="{{line_3}}">
-		<input type="hidden" name="traderposttown" value="{{post_town}}">
-	
-		{{/vars}} -->
+	    
 
 
 
+		{{#vars}}
 		<!-- Get the vehicle reg -->
-		<div style="margin-bottom:2em">
+		<div style="margin-bottom:1em">
 		<label class="form-label" for="regmark">Vehicle registration number</label>
 
 		<span class="form-hint">eg. CU57 ABC</span>
 
-		<input id="regmark" name="regmark" autocomplete="off" class="form-control  input-large form-control-1-4" type="text" maxlength="9" required style="text-transform:uppercase"/>
+		<input id="regmark" name="regmark" autocomplete="off" class="form-control  input-large form-control-1-4" type="text" maxlength="9" required style="text-transform:uppercase" value="{{regmark}}" />
 		</div>
+		{{/vars}}
 
 
 
 		
 
 
-
-	    <br clear="all">
-
+	    {{{button}}}
 
 		
-
-
-
-
-		<div class="form-group" style="margin-top:3em">
-			<input type="submit" class="button" value="Continue">
-        </div>
 
     </form>
 

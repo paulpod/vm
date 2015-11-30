@@ -56,21 +56,7 @@
 	<form method="get" action="vm-flow" class="form" data-parsley-validate>
 		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-keeper-dob">
 	    
-	    {{#vars}}
-		<input type="hidden" name="tradername" value="{{tradername}}">
-		<input type="hidden" name="traderemail" value="{{traderemail}}">
-		<input type="hidden" name="traderpostcode" value="{{traderpostcode}}">
-		<input type="hidden" name="traderline1" value="{{traderline1}}">
-		<input type="hidden" name="traderline2" value="{{traderline2}}">
-		<input type="hidden" name="traderline3" value="{{traderline3}}">
-		<input type="hidden" name="traderposttown" value="{{traderposttown}}">
-		<input type="hidden" name="regmark" value="{{regmark}}">
-		<input type="hidden" name="v5c" value="{{v5c}}">
-		<input type="hidden" name="saledate" value="{{saledate}}">
-		<input type="hidden" name="mileage" value="{{mileage}}">
-
-		{{/vars}}
-
+	   
 
 		<!-- Use a single field for names wherever possible -->
 		<!-- https://www.gov.uk/service-manual/user-centred-design/resources/patterns/names.html -->
@@ -84,7 +70,7 @@
 		<p>
 		<label class="form-label" for="keeperfirstname">First name(s)</label>
 
-		<input id="keeperfirstname" name="keeperfirstname" autocomplete="off" class="form-control  input-large form-control-1-3" type="text" required />
+		<input id="keeperfirstname" name="keeperfirstname" autocomplete="off" class="form-control input-large form-control-1-3" type="text" required style="text-transform:uppercase" />
 		</p>
 
 
@@ -92,19 +78,15 @@
 		<p>
 		<label class="form-label" for="keeperlastname">Last name</label>
 
-		<input id="keeperlastname" name="keeperlastname" autocomplete="off" class="form-control  input-large form-control-1-3" type="text" required />
+		<input id="keeperlastname" name="keeperlastname" autocomplete="off" class="form-control input-large form-control-1-3" type="text" required style="text-transform:uppercase" />
 		</p>
-
-		<br clear="all">
-
 
 		
 
 
+		{{{button}}}
 
-		<div class="form-group" style="margin-top:4em">
-			<input type="submit" class="button" value="Continue">
-        </div>
+		
 
     </form>
 

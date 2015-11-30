@@ -76,19 +76,8 @@
 		<form method="get" action="vm-flow" class="form" data-parsley-validate>
 		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-vehicle-keeperis">
 	   
-	   {{#vars}}
-	    <input type="hidden" name="tradername" value="{{tradername}}">
-	    <input type="hidden" name="traderemail" value="{{traderemail}}">
-	    <input type="hidden" name="traderpostcode" value="{{traderpostcode}}">
-	    <input type="hidden" name="traderline1" value="{{traderline1}}">
-	    <input type="hidden" name="traderline2" value="{{traderline2}}">
-	    <input type="hidden" name="traderline3" value="{{traderline3}}">
-	    <input type="hidden" name="traderposttown" value="{{traderposttown}}">
-	    <input type="hidden" name="regmark" value="{{regmark}}">
-	    <input type="hidden" name="v5c" value="{{v5c}}">
-
-	    
-	    {{/vars}}
+	 
+	 
 
 
 		<!-- Script to limit the DOB input fields to fix HTML type=number and maxlength not working -->
@@ -142,7 +131,7 @@
 
 	    <!-- Vehicle mileage is also optional / probably not worth asking,
 	    	and could we not get it from the last MOT anyway? Or pre-populate? -->
-	    <div style="margin-top:2em">
+	    <div style="margin:1em 0">
 		    <label class="form-label" for="mileage">Vehicle mileage (optional)</label>
 
 			<input id="mileage" name="mileage" autocomplete="off" class="form-control input-large form-control-1-4" type="number" />
@@ -151,9 +140,11 @@
 
 
 
-		<div class="form-group" style="margin:2em 0 3em 0">
+		<!--<div class="form-group" style="margin:2em 0 3em 0">
 			<input type="submit" class="button" value="Continue">
-        </div>
+        </div>-->
+
+        {{{button}}}
 
     </form>
 
