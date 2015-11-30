@@ -1142,3 +1142,12 @@ li:not(#foo) > fieldset > div > span > input[type='checkbox'] {
 .confirmation .next {
     margin-top: 1em
 }
+
+
+.linkbutton {
+  color:$link-colour;
+  padding:0;
+  text-decoration: underline;
+  border: none;
+  background:none;
+}
