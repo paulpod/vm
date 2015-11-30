@@ -9,9 +9,8 @@ var path = require('path'),
     password = process.env.PASSWORD,
     env = process.env.NODE_ENV || 'development';
 
-
- var session = require('express-session')
-app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
+    var session = require('express-session')
+    app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}));
     // Moment to grab the date and do that in places
     var moment = require("moment");
 

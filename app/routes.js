@@ -1,12 +1,10 @@
 module.exports = {
   bind : function (app) {
 
-    app.get('/', function (req, res) {
-        res.render('index');
+    app.get('/', function (req, res) {res.render('index')});
 
-        var defaultreg = 'CU57&nbsp;ABC';
 
-    });
+    
 
 
 
@@ -39,17 +37,13 @@ module.exports = {
     var sess = req.session;
     sessvars = sess.vars;
 
-console.log(sess.vars);
 
     // merge the sets of variables from
     // the page and the session
     var merged = objectMerge(sessvars, pagevars);
     sess.vars = merged;
 
-    
-console.log(merged);
-
-   
+    console.log(merged);
     
 
     //doing things with dates, but
@@ -60,6 +54,7 @@ console.log(merged);
     var todayday = now.format("D");
     var todaymon = now.format("MM");
     var todayyear = now.format("YYYY");
+
 
     var continuelink = "<div class='form-group' style='margin-top:2em'><input type='submit' class='button' value='Continue'></div>"
    
