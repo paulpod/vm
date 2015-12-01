@@ -1,0 +1,150 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+	<!-- ordering of JS load is important !-->
+	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/parsley.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/mailcheck.min.js"></script>
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_vmacquireprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+	<div>
+	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+	</div>
+
+	<br clear="all">
+
+	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">New keeper details
+	</h1>
+		
+	
+	<!--<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">sub head
+	</h2>-->
+
+
+
+	<form method="get" action="vm-flow" class="form" data-parsley-validate>
+		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-keeper-email">
+	    
+	   
+
+		
+
+
+
+		<!-- Date of birth, if optional shouldn't be asked! -->
+
+		<label class="form-label" for="dob">Date of birth (optional)</label>
+		
+		<p class="form-hint">For example, 03&nbsp;&nbsp;11&nbsp;&nbsp;1987</p>
+		
+
+		<fieldset>
+
+		<!-- Script to limit the DOB input fields to fix HTML type=number and maxlength not working -->
+		<script>
+            function numbers(id, event) {
+                var element = $("#" + id);
+                var len = element.val().length + 1;
+                var max = element.attr("maxlength");
+
+                var cond = (46 < event.which && event.which < 58) || (46 < event.keyCode && event.keyCode < 58);
+
+                if (!(cond && len <= max)) {
+                    event.preventDefault();
+                    return false;
+                }
+            }
+        </script>
+
+
+		<div style="float:left;width:5em">
+		<label class="form-label" for="dob-dd">Day</label>
+
+		<input id="keeperdobdd" name="dob-dd" autocomplete="off" class="form-control input-large " type="number" style="width:75%" maxlength="2" min="1" max="31" onkeypress="numbers(this.id, event)" />
+		</div>
+
+
+		<div style="float:left;width:5em">
+		<label class="form-label" for="dob-mm">Month</label>
+
+		<input id="keeperdobmm" name="dob-mm" autocomplete="off" class="form-control input-large " type="number"  style="width:75%" maxlength="2" min="1" max="12" onkeypress="numbers(this.id, event)" />
+		</div>
+
+
+		<div style="float:left;width:8em">
+		<label class="form-label" for="dob-yyyy">Year</label>
+
+		<input id="keeperdobyyyy" name="dob-yyyy" autocomplete="off" class="form-control input-large " type="number"  style="width:75%" maxlength="4" onkeypress="numbers(this.id, event)" />
+		</div>
+
+		<br clear="all">
+
+		
+
+
+		</fieldset>
+
+
+
+
+
+
+
+
+
+
+
+		{{{button}}}
+
+		
+
+    </form>
+
+		
+
+
+
+
+
+	
+
+   
+ </main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

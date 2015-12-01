@@ -1,0 +1,223 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+	<!-- ordering of JS load is important !-->
+	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/parsley.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/mailcheck.min.js"></script>
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_vmacquireprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0" class="confirmation">
+<article style="max-width:38em">
+
+	<!-- <div>
+	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+	</div>
+
+	<br clear="all"> -->
+
+	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Check your answers 
+	</h1>
+		
+	
+
+
+
+
+	    
+
+
+		<h2>Trader details</h2>
+		
+
+		{{#vars}}
+
+		<div>
+	        <h3>Name</h3>
+	        <div class="data-wrap">
+	            <p>{{tradername}}</p>
+	        </div>
+	        <a href="vm-acqpp/vm-acquire-trader-name?mode=checker" class="change">
+	            Change<span class="visuallyhidden"> trader name</span>
+	        </a>
+	    </div>
+
+	    <div>
+	        <h3>Email</h3>
+	        <div class="data-wrap">
+	            <p>{{traderemail}}</p>
+	        </div>
+	        <a href="vm-acqpp/vm-acquire-trader-email?mode=checker" class="change">
+	            Change<span class="visuallyhidden"> trader email</span>
+	        </a>
+	    </div>
+
+	    <div>
+	        <h3>Address</h3>
+	        <div class="data-wrap">
+
+	        <p>{{traderline1}}<br>
+			{{traderline2}}<br>
+			{{traderline3}}
+			{{traderposttown}}<br>
+			{{traderpostcode}}</p>
+
+
+	       
+
+	        </div>
+	        <a href="vm-acqpp/vm-acquire-trader-address?mode=checker" class="change">
+	            Change<span class="visuallyhidden"> trader address</span>
+	        </a>
+	    </div>
+
+
+
+
+	    <h2>Vehicle details</h2>
+
+		<div>
+	        <h3>Registration number</h3>
+	        <div class="data-wrap">
+	            <p>{{regmark}}</p>
+
+	        </div>
+	        <a href="vm-acqpp/vm-acquire-vehicle-vrn?mode=checker" class="change">
+	            Change<span class="visuallyhidden"> vehicle details</span>
+	        </a>
+	    </div>
+
+		<div>
+	        <h3>Details</h3>
+	        <div class="data-wrap">
+	        <p>Alfa Romeo<br>
+	        Spider<br>
+	        {{mileage}} Miles</p>
+
+	        <p>Date of this sale: {{saledate}}</p>
+
+            </div>
+        </div>
+
+
+
+
+        <h2>New keeper details</h2>
+		
+
+		<div>
+	        <h3>Name</h3>
+	        <div class="data-wrap">
+	            <p>{{keeperfirstname}} {{keeperlastname}}</p>
+	        </div>
+	        <a href="vm-acqpp/vm-acquire-keeper-name?mode=checker" class="change">
+	            Change<span class="visuallyhidden"> keeper name</span>
+	        </a>
+	    </div>
+
+	    <div>
+	        <h3>Date of birth</h3>
+	        <div class="data-wrap">
+	            <p>{{keeperdob}}</p>
+	        </div>
+	        <a href="vm-acqpp/vm-acquire-keeper-dob?mode=checker" class="change">
+	            Change<span class="visuallyhidden"> keeper date of birth</span>
+	        </a>
+	    </div>
+
+	    <div>
+	        <h3>Email</h3>
+	        <div class="data-wrap">
+	            <p>{{keeperemail}}</p>
+	        </div>
+	        <a href="vm-acqpp/vm-acquire-keeper-email?mode=checker" class="change">
+	            Change<span class="visuallyhidden"> keeper email</span>
+	        </a>
+	    </div>
+
+	    <div>
+	        <h3>Address</h3>
+	        <div class="data-wrap">
+
+	        <p>{{keeperline1}}<br>
+			{{keeperline2}}
+			{{keeperline3}}
+			{{keeperposttown}}<br>
+			{{keeperpostcode}}</p>
+
+	        </div>
+	        <a href="vm-acqpp/vm-acquire-keeper-address?mode=checker" class="change">
+	            Change<span class="visuallyhidden"> keeper address</span>
+	        </a>
+	    </div>
+
+	    {{/vars}}
+
+
+		
+
+
+	<h3 style="margin:1em 0">Check the details above and tick the consent box below</h3>
+
+	<!-- user must check details, change if required 
+	- - and confirm all OK + consent of new keeper -->
+
+	<form method="get" action="vm-flow" class="form" data-parsley-validate>
+		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-end">
+
+		    <label for="check-inline-1" class="block-label">
+		    <input id="check-inline-1" type="checkbox"  name="consent" value="yes">
+		    I have the consent of the keeper named to notify the DVLA
+		    </label>
+	    
+	    <div class="form-group" style="margin:2em 0 3em 0">
+			<input type="submit" class="button" value="Continue">
+        </div>
+
+    </form>
+
+		
+
+
+
+
+
+	
+
+   </article>
+ </main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

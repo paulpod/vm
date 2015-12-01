@@ -1,0 +1,131 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+	<!-- ordering of JS load is important !-->
+	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_vmacquireprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+	<div>
+	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+	</div>
+
+	<br clear="all">
+
+	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Provide vehicle details
+	</h1>
+		
+	
+	<!--<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">sub head
+	</h2>-->
+
+
+
+	<form method="get" action="vm-flow" class="form" data-parsley-validate>
+		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-vehicle-check">
+	    
+	    
+	    
+		
+
+
+		<!-- Get the vehicle V5C doc ref number -->
+		<label class="form-label" for="v5c">Latest V5C (logbook) reference number</label>
+
+		<div style="margin:0.3em 0"><details>
+        <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true">
+          <span class="summary">Where to find this</span>
+        </summary>
+        <div class="" id="details-content-0" aria-hidden="false" style="display:block;border-left:none">
+        
+        <img src="/public/images/v5c-diagram.png" width="280" height="162" style="padding:1em 0 0 0">
+
+        <p style="max-width:620px">You should have received your V5C shortly after acquiring your vehicle.</p>
+          
+        </div>
+		</details></div>
+
+		
+		<div  style="margin-bottom:0em">
+		<input id="v5c" name="v5c" autocomplete="off" class="form-control input-large form-control-1-3" type="number" maxlength="11" required style="text-transform:uppercase" onkeypress="numbers(this.id, event)" />
+		</div>
+
+
+		<!-- This is a little script to limit the above input field for a doc ref to be both number + limited to 11 digits ... unfortunately the HTML type=number and maxlength do not work together -->
+		<script>
+            function numbers(id, event) {
+                var element = $("#" + id);
+                var len = element.val().length + 1;
+                var max = element.attr("maxlength");
+
+                var cond = (46 < event.which && event.which < 58) || (46 < event.keyCode && event.keyCode < 58);
+
+                if (!(cond && len <= max)) {
+                    event.preventDefault();
+                    return false;
+                }
+            }
+        </script>
+
+		
+
+
+	    <br clear="all">
+
+
+		
+
+
+
+
+		<!--<div class="form-group" style="margin-top:3em">
+			<input type="submit" class="button" value="Continue">
+        </div>-->
+
+        {{{button}}}
+
+    </form>
+
+		
+
+
+
+
+
+	
+
+   
+ </main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

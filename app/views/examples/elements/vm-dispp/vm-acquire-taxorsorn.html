@@ -1,0 +1,167 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+	<!-- ordering of JS load is important !-->
+	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/parsley.min.js"></script>
+
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_vmacquireprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+	<div>
+	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+	</div>
+
+	<br clear="all">
+
+	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Tax or SORN the vehicle
+	</h1>
+		
+	
+	<!--<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">sub head
+	</h2>-->
+
+	<div class="grid-row">
+    <div class="column-two-thirds">
+
+
+
+	<form method="get" action="vm-flow" class="form" data-parsley-validate>
+	<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-check">
+
+ 
+ 
+
+
+
+
+
+	<legend style="padding:1em 0">The vehicle needs to be taxed or have a Statutory Off Road Notification made when it is purchased.</legend>
+
+
+    <!-- Ref number select -->
+    <div class="form-group form-group-compound">
+
+    <label for="radio-inline-1" class="block-label" data-target="taxitlink" >
+    <input id="radio-inline-1" type="radio"  name="taxorsorn" value="tax" data-parsley-errors-container="#custom-parsley-error" data-parsley-required data-parsley-error-message="Please select one of these options">
+    Tax vehicle
+    </label>
+
+    <div class="panel-indent js-hidden" id="taxitlink" style="padding-top:1em;margin-bottom:1em">
+
+		<p><strong>You must <a rel="external" href="http://evl-dd.herokuapp.com/examples/elements/evl-11-v5c2-newkeeper#regmark=CU57ABC" target="_blank">Tax the vehicle now</a></strong>  <span style="color:grey;padding-left:1em">(will open in a new window)</span></p>
+
+    <p>To tax, you will need to use the 12 digit document reference number from the V5C/2 (green slip) section of the registration certificate as a new keeper.</p>
+
+		<img src="/public/images/v5c2-diagram.png" width="280" height="162" align="middle" style="padding:0 0 1em 0">
+
+		<p>Once taxing is completed return to this page and select Continue.</p>
+
+    </div>
+
+
+
+
+    <label for="radio-inline-2" class="block-label">
+    <input id="radio-inline-2" type="radio"  name="taxorsorn" value="sorn" data-required="true">
+    SORN now
+    </label>
+
+   
+
+
+
+
+
+    <label for="radio-inline-3" class="block-label" data-target="neithertext">
+    <input id="radio-inline-3" type="radio"  name="taxorsorn" value="neither" data-parsley-required>
+    Neither
+    </label>
+
+    <div class="panel-indent js-hidden" id="neithertext" style="padding-top:1em;margin-bottom:0">
+      
+      <p>If you have not already taxed or declared SORN for this vehicle, you must remind the new keeper that it's their responsibility to ensure the vehicle is taxed if it is driven on the road.</p>
+
+      <p>If the vehicle is being kept off the road, the new keeper must make a SORN.</p>
+
+  </div>
+
+
+  <span id="custom-parsley-error"></span>
+
+
+
+  </fieldset>
+
+
+
+
+  
+  <br clear="all">
+
+
+
+		
+
+
+
+
+
+
+		<!--<div class="form-group" style="margin-top:2em">
+			<input type="submit" class="button" value="Continue">
+    </div>-->
+
+    {{{button}}}
+
+
+    </form>
+
+    </div></div>
+
+		
+
+
+
+
+
+	
+
+   
+ </main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

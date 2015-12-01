@@ -1,0 +1,128 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+
+	<script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_vmacquireprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+	<div>
+	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+	</div>
+
+	<br clear="all">
+
+	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Provide keeper details
+	</h1>
+	
+	<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Confirm full address
+	</h2>
+
+
+
+
+
+
+	<form action="vm-flow" method="get" class="form">
+		<!-- was linking to the clunky tax or sorn choice page, but now skipping 
+		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-taxorsorn">-->
+		
+		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-check">
+		
+
+		
+
+		
+
+		
+
+
+
+
+		
+
+		<div class="form-group">
+
+
+			
+			{{#address}}
+
+			
+			<label>Address</label>
+			<div class="address-form-line">
+			<input id="keeperline1" name="keeperline1" class="form-control form-control-1-4" type="text" value="{{line_1}}">
+			</div>
+
+
+			<div class="address-form-line">
+			<input id="keeperline2" name="keeperline2" class="form-control form-control-1-4" type="text" value="{{line_2}}">
+			</div>
+
+			<div class="address-form-line">
+			<input id="keeperline3" name="keeperline3" class="form-control form-control-1-4" type="text" value="{{line_3}}">
+			</div>
+
+
+			<label>Town or city</label>
+			<div class="address-form-line">
+			<input id="keeperposttown" name="keeperposttown" class="form-control form-control-1-4" type="text" value="{{post_town}}">
+			</div>
+
+
+			<label>Postcode</label>
+			<div class="address-form-line">
+			<input id="keeperpostcode" name="keeperpostcode" class="form-control form-control-1-8" type="text" value="{{postcode}}" style="text-transform:uppercase">
+			</div>
+			
+
+
+			{{/address}}
+			
+
+
+		</div>
+
+		<div class="form-group" style="margin-top:1em">
+			<input type="submit" class="button" value="Confirm address">
+        </div>
+		
+	</form>
+                
+
+   
+ </main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

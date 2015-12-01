@@ -1,0 +1,184 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+	<!-- ordering of JS load is important !-->
+	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/parsley.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/mailcheck.min.js"></script>
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_vmacquireprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+	<div>
+	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+	</div>
+
+	<br clear="all">
+
+	<h1 class="heading-large" style="padding:0;margin:0 0 1em 0">Complete and confirm
+	</h1>
+		
+	
+
+
+
+
+		<!-- Sale date, usually today's date, so there is the one-click tool -->
+
+		<label class="form-label" for="dob">
+		Date of sale
+		<button id="autodate" style="color:#005EA5;border:none;background:none;font-size:1em;margin-left:2em">Click here to use today's date</button></label>
+
+		
+
+		<script>
+			$("#autodate").click(function () {
+			$("#keeperdobdd").val("{{todayday}}");
+			$("#keeperdobmm").val("{{todaymon}}");
+			$("#keeperdobyyyy").val("{{todayyear}}");
+			});
+		</script>
+
+
+
+
+
+		<form method="get" action="" class="form" data-parsley-validate>
+		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-check">
+	   
+	   {{#vars}}
+	    <input type="hidden" name="tradername" value="{{tradername}}">
+	    <input type="hidden" name="tradername" value="{{traderemail}}">
+	    <input type="hidden" name="traderpostcode" value="{{traderpostcode}}">
+	    <input type="hidden" name="traderline1" value="{{traderline1}}">
+	    <input type="hidden" name="traderline2" value="{{traderline2}}">
+	    <input type="hidden" name="traderline3" value="{{traderline3}}">
+	    <input type="hidden" name="traderposttown" value="{{traderposttown}}">
+	    <input type="hidden" name="regmark" value="{{regmark}}">
+	    <input type="hidden" name="v5c" value="{{v5c}}">
+
+	    <input type="hidden" name="keeperfirstname" value="{{keeperfirstname}}">
+	    <input type="hidden" name="keeperlastname" value="{{keeperlastname}}">
+
+	    <input type="hidden" name="keeperdob" value="{{keeperdob}}">
+	    <input type="hidden" name="keeperpostcode" value="{{keeperpostcode}}">
+
+	    <input type="hidden" name="keeperaddress1" value="{{line_1}}">
+	    <input type="hidden" name="keeperaddress2" value="{{line_2}}">
+	    <input type="hidden" name="keeperaddress3" value="{{line_3}}">
+	    <input type="hidden" name="keeperposttown" value="{{post_town}}">
+	    {{/vars}}
+
+
+		<!-- Script to limit the DOB input fields to fix HTML type=number and maxlength not working -->
+		<script>
+            function numbers(id, event) {
+                var element = $("#" + id);
+                var len = element.val().length + 1;
+                var max = element.attr("maxlength");
+
+                var cond = (46 < event.which && event.which < 58) || (46 < event.keyCode && event.keyCode < 58);
+
+                if (!(cond && len <= max)) {
+                    event.preventDefault();
+                    return false;
+                }
+            }
+        </script>
+
+
+		<fieldset>
+
+		<div style="float:left;width:5em">
+		<label class="form-label" for="dob-dd">Day</label>
+
+		<input id="keeperdobdd" name="dob-dd" autocomplete="off" class="form-control input-large " type="number" style="width:75%" maxlength="2" min="1" max="31" onkeypress="numbers(this.id, event)" />
+		</div>
+
+
+		<div style="float:left;width:5em">
+		<label class="form-label" for="dob-mm">Month</label>
+
+		<input id="keeperdobmm" name="dob-mm" autocomplete="off" class="form-control input-large " type="number"  style="width:75%" maxlength="2" min="1" max="12" onkeypress="numbers(this.id, event)" />
+		</div>
+
+
+		<div style="float:left;width:8em">
+		<label class="form-label" for="dob-yyy">Year</label>
+
+		<input id="keeperdobyyyy" name="dob-yyy" autocomplete="off" class="form-control input-large " type="number"  style="width:75%" maxlength="4" onkeypress="numbers(this.id, event)" />
+		</div>
+
+		<br clear="all">
+		<p class="form-hint">For example, {{today}}</p>
+
+
+		</fieldset>
+
+
+
+
+
+	    <!-- Vehicle mileage is also optional / probably not worth asking,
+	    	and could we not get it from the last MOT anyway? Or pre-populate? -->
+	    <div style="margin-top:2em">
+		    <label class="form-label" for="mileage">Vehicle mileage (optional)</label>
+
+			<input id="mileage" name="mileage" autocomplete="off" class="form-control input-large form-control-1-4" type="number" />
+		</div>
+
+
+
+
+		<div class="form-group" style="margin-top:4em">
+			<input type="submit" class="button" value="Continue">
+        </div>
+
+    </form>
+
+		
+
+
+
+
+
+	
+
+   
+ </main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
