@@ -92,9 +92,15 @@
 
 
 		<div class="form-group" style="margin:2.5em 0 4em 0">
+
+		
+
 			<input type="submit" class="button" value="Print">
 
-			<a href="vm-dispp/vm-vehicle-vrn" class="greybutton" style="color:black">Notify another sale</a>
+			<form method="get" action="vm-disflow" class="form">
+				<input type="hidden" name="nextlink" value="vm-dispp/vm-vehicle-vrn">
+				<input type="submit" class="greybutton" value="Notify another sale" style="color:black">
+			</form>
 
 			<a href="#" class="greybutton" style="color:black">Finish</a>
 
