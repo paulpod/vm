@@ -77,7 +77,7 @@ module.exports = {
 
     // as long as it's not trying to return from a check/change
     if(/chexx/.test(next)){
-      var next = 'vm-dispp/vm-acquire-check';
+      var next = 'vm-dispp/vm-check';
     }
 
 
