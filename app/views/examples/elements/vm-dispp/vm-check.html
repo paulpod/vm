@@ -21,7 +21,7 @@
 
 
 {{$propositionHeader}}
-  {{>includes/govuk_vmacquireprop}}
+  {{>includes/govuk_vmdisposeprop}}
 {{/propositionHeader}}
 
 {{$headerClass}}with-proposition{{/headerClass}}
@@ -62,12 +62,11 @@
 	        <div class="data-wrap">
 	            <p style="text-transform:uppercase">{{tradername}}</p>
 	        </div>
-	        <!--<a href="vm-acqpp/vm-acquire-trader-name?mode=checker" class="change">
-	            Change<span class="visuallyhidden"> trader name</span>
-	        </a>-->
+	        
+
 	        <div style="float:right;width:14%">
 	        <form method="get" action="vm-check" class="form">
-				<input type="hidden" name="checklink" value="vm-acqpp/vm-acquire-trader-name">
+				<input type="hidden" name="checklink" value="vm-dispp/vm-trader-name">
 				<input type="hidden" name="mode" value="checker">
 		        <input type="submit" class="linkbutton" value="Change">
 	        </form>
@@ -75,14 +74,13 @@
 	    </div>
 	    <br clear="all">
 
-	    <div>
+	    <!--<div>
 	        <h3>Email</h3>
 	        <div class="data-wrap">
 	            <p>{{traderemail}}</p>
 	        </div>
-	        <!--<a href="vm-acqpp/vm-acquire-trader-email?mode=checker" class="change">
-	            Change<span class="visuallyhidden"> trader email</span>
-	        </a>-->
+	        
+
 	        <div style="float:right;width:14%">
 	        <form method="get" action="vm-check" class="form">
 				<input type="hidden" name="checklink" value="vm-acqpp/vm-acquire-trader-email">
@@ -91,7 +89,7 @@
 	        </form>
 	        </div>
 	    </div>
-	    <br clear="all">
+	    <br clear="all">-->
 
 	    <div>
 	        <h3>Address</h3>
@@ -103,16 +101,12 @@
 			{{traderposttown}}<br>
 			{{traderpostcode}}</p>
 
-
-	       
-
 	        </div>
-	        <!-- <a href="vm-acqpp/vm-acquire-trader-address?mode=checker" class="change">
-	            Change<span class="visuallyhidden"> trader address</span>
-	        </a> -->
+	        
+
 	        <div style="float:right;width:14%">
 	        <form method="get" action="vm-check" class="form">
-				<input type="hidden" name="checklink" value="vm-acqpp/vm-acquire-trader-address">
+				<input type="hidden" name="checklink" value="vm-dispp/vm-trader-postcode">
 				<input type="hidden" name="mode" value="checker">
 		        <input type="submit" class="linkbutton" value="Change">
 	        </form>
@@ -131,12 +125,11 @@
 	            <p style="margin-top:0.66em"><span class="reg-mark">{{regmark}}</span></p>
 
 	        </div>
-	        <!--<a href="vm-check?checklink=vm-acqpp/vm-acquire-vehicle-vrn" class="change">
-	            Change<span class="visuallyhidden"> vehicle details</span>
-	        </a>-->
+	        
+
 	        <div style="float:right;width:14%">
 	        <form method="get" action="vm-check" class="form">
-				<input type="hidden" name="checklink" value="vm-acqpp/vm-acquire-vehicle-vrn">
+				<input type="hidden" name="checklink" value="vm-dispp/vm-vehicle-vrn">
 				<input type="hidden" name="mode" value="checker">
 		        <input type="submit" class="linkbutton" value="Change">
 	        </form>
@@ -160,7 +153,7 @@
 
 
 
-        <h2>New keeper details</h2>
+        <!--<h2>New keeper details</h2>
 		
 
 		<div>
@@ -168,12 +161,11 @@
 	        <div class="data-wrap">
 	            <p style="text-transform:uppercase">{{keeperfirstname}} {{keeperlastname}}</p>
 	        </div>
-	        <!--<a href="vm-acqpp/vm-acquire-keeper-name?mode=checker" class="change">
-	            Change<span class="visuallyhidden"> keeper name</span>
-	        </a>-->
+	        
+
 	        <div style="float:right;width:14%">
 	        <form method="get" action="vm-check" class="form">
-				<input type="hidden" name="checklink" value="vm-acqpp/vm-acquire-keeper-name">
+				<input type="hidden" name="checklink" value="vm-dispp/vm-keeper-name">
 				<input type="hidden" name="mode" value="checker">
 		        <input type="submit" class="linkbutton" value="Change">
 	        </form>
@@ -186,12 +178,11 @@
 	        <div class="data-wrap">
 	            <p>{{dob-dd}} &ndash; {{dob-mm}} &ndash; {{dob-yyyy}}</p>
 	        </div>
-	        <!--<a href="vm-acqpp/vm-acquire-keeper-dob?mode=checker" class="change">
-	            Change<span class="visuallyhidden"> keeper date of birth</span>
-	        </a>-->
+	        
+
 	        <div  style="float:right;width:14%">
 	        <form method="get" action="vm-check" class="form">
-				<input type="hidden" name="checklink" value="vm-acqpp/vm-acquire-keeper-dob">
+				<input type="hidden" name="checklink" value="vm-dispp/vm-keeper-dob">
 				<input type="hidden" name="mode" value="checker">
 		        <input type="submit" class="linkbutton" value="Change">
 	        </form>
@@ -204,12 +195,11 @@
 	        <div class="data-wrap">
 	            <p>{{keeperemail}}</p>
 	        </div>
-	        <!--<a href="vm-acqpp/vm-acquire-keeper-email?mode=checker" class="change">
-	            Change<span class="visuallyhidden"> keeper email</span>
-	        </a>-->
+	       
+
 	        <div style="float:right;width:14%">
 	        <form method="get" action="vm-check" class="form">
-				<input type="hidden" name="checklink" value="vm-acqpp/vm-acquire-keeper-email">
+				<input type="hidden" name="checklink" value="vm-dispp/vm-keeper-email">
 				<input type="hidden" name="mode" value="checker">
 		        <input type="submit" class="linkbutton" value="Change">
 	        </form>
@@ -228,17 +218,17 @@
 			{{keeperpostcode}}</p>
 
 	        </div>
-	        <!--<a href="vm-acqpp/vm-acquire-keeper-address?mode=checker" class="change">
-	            Change<span class="visuallyhidden"> keeper address</span>
-	        </a>-->
+	       
+
 	        <div style="float:right;width:14%">
 	        <form method="get" action="vm-check" class="form">
-				<input type="hidden" name="checklink" value="vm-acqpp/vm-acquire-keeper-postcode">
+				<input type="hidden" name="checklink" value="vm-dispp/vm-keeper-postcode">
 				<input type="hidden" name="mode" value="checker">
 		        <input type="submit" class="linkbutton" value="Change">
 	        </form>
 	        </div>
-	    </div>
+	    </div>-->
+
 	    <br clear="all">
 
 	    {{/vars}}
@@ -253,15 +243,20 @@
 	- - and confirm all OK + consent of new keeper -->
 
 	<form method="get" action="vm-flow" class="form" data-parsley-validate>
-		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-end">
+		<input type="hidden" name="nextlink" value="vm-dispp/vm-end">
 
 		    <label for="check-inline-1" class="block-label">
-		    <input id="check-inline-1" type="checkbox"  name="consent" value="yes" required data-parsley-error-message="You must confirm you have the new keeper's consent">
-		    I have the consent of the keeper named to notify the DVLA
+		    <input id="check-inline-1" type="checkbox"  name="consent" value="yes" required data-parsley-error-message="You must confirm you have the keeper's consent">
+		    I have the consent of the current keeper to notify the sale of this vehicle
+		    </label>
+
+		    <label for="check-inline-2" class="block-label">
+		    <input id="check-inline-2" type="checkbox"  name="confirm" value="yes" required data-parsley-error-message="You must confirm you have the new keeper's consent">
+		    I confirm that the current keeper understands that the rights to this registration number will be lost on the sale of this vehicle
 		    </label>
 	    
 	    <div class="form-group" style="margin:1.2em 0 2em 0">
-			<input type="submit" class="button" value="Continue">
+			<input type="submit" class="button" value="Confirm sale">
         </div>
 
     </form>
