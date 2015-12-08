@@ -252,20 +252,37 @@
 	<!-- user must check details, change if required 
 	- - and confirm all OK + consent of new keeper -->
 
+
+	<script>
+	    $(function() {
+	  var chk = $('#check');
+	  var btn = $('#btncheck');
+
+	  chk.on('change', function() {
+	    btn.prop("disabled", !this.checked);//true: disabled, false: enabled
+	  }).trigger('change'); //page load trigger event
+	});
+	</script>
+
+
+
 	<form method="get" action="vm-flow" class="form" data-parsley-validate>
 		<input type="hidden" name="nextlink" value="vm-acqpp/vm-acquire-end">
 
-		    <label for="check-inline-1" class="block-label">
-		    <input id="check-inline-1" type="checkbox"  name="consent" value="yes" required data-parsley-error-message="You must confirm you have the new keeper's consent">
+		    <label for="check" class="block-label">
+		    <input id="check" type="checkbox"  name="consent" value="yes" required data-parsley-error-message="You must confirm you have the new keeper's consent">
 		    I have the consent of the keeper named to notify the DVLA
 		    </label>
 	    
 	    <div class="form-group" style="margin:1.2em 0 2em 0">
-			<input type="submit" class="button" value="Continue">
+			<input type="submit" class="button" value="Continue" id="btncheck">
         </div>
 
     </form>
 
+
+
+	
 		
 
 
